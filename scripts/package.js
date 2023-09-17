@@ -74,7 +74,9 @@ To view the source code, please visit https://github.com/joggrdocs/fastify-prism
 // Main
 
 const prepareThePackage = async () => {
-  await exec('npm run build');
+  await exec('npm run build', {
+    cwd: rootDir
+  });
 
   // Prepare the package.json
   const packageJson = await preparePackageJson();

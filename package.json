@@ -1,6 +1,6 @@
 {
   "name": "@joggr/fastify-prisma",
-  "version": "0.1.0",
+  "version": "0.0.0",
   "description": "Fastify Prisma plugin connection to share the same connection across your entire server.",
   "main": "dist/index.js",
   "scripts": {
