@@ -20,6 +20,8 @@ jobs:
         run: npm install
       - name: 📦 Package for Distribution
         run: npm run package
+        env:
+          TAG: ${{ github.ref_name }}
       - name: ✉️ Publish
         run: npm publish --access public
         working-directory: ./dist
