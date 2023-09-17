@@ -1,7 +1,7 @@
 # fastify-prisma
 
 ![CI](https://github.com/joggrdocs/fastify-prisma/workflows/CI/badge.svg)
-![npm version](https://img.shields.io/npm/v/%40joggr/fastify-prisma)
+[![npm version](https://img.shields.io/npm/v/%40joggr/fastify-prisma)](https://www.npmjs.com/package/@joggr/fastify-prisma)
 [![js-semistandard-style](https://img.shields.io/badge/code%20style-semistandard-brightgreen.svg)](https://github.com/standard/semistandard)
 
 Fastify Prisma plugin to share the same `PrismaClient` across your entire server.
