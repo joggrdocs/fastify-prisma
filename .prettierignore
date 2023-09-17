@@ -1,0 +1,17 @@
+dist/
+lib/
+node_modules/
+docs/
+*.md
+.github
+.husky
+.jest
+.vscode
+.yarn
+coverage
+dist
+docs
+imports
+
+# Ignore test files
+src/__tests__/node_modules/

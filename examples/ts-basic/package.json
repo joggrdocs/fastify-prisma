@@ -1,0 +1,22 @@
+{
+  "name": "fastify-prisma-example-basic",
+  "version": "1.0.0",
+  "description": "A basic example using the fastify-prisma plugin",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "ts-node src/server.ts"
+  },
+  "author": "Joggr Engineering <engineering@joggr.io>",
+  "license": "MIT",
+  "prisma": {
+    "seed": "ts-node prisma/seed.ts"
+  },
+  "dependencies": {
+    "@joggr/fastify-prisma": "^0.2.0",
+    "@prisma/client": "^5.3.1",
+    "fastify": "^4.23.2",
+    "prisma": "^5.3.1",
+    "ts-node": "^10.9.1"
+  }
+}

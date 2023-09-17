@@ -1,0 +1,44 @@
+name-template: 'v$RESOLVED_VERSION'
+tag-template: 'v$RESOLVED_VERSION'
+categories:
+  - title: ':bangbang: Breaking Changes'
+    labels:
+      - 'major'
+  - title: '🚀 Features'
+    labels:
+      - 'enhancement'
+  - title: '🔥 Hot Fixes'
+    labels:
+      - 'hotfix'
+  - title: '🐛 Bug Fixes'
+    labels:
+      - 'bugfix'
+  - title: '🧰 Maintenance'
+    labels:
+      - 'maintenance'
+      - 'chore'
+      - 'maintain'
+  - title: '👮 Security'
+    label: 'security'
+  - title: '🤖 Dependabot'
+    label: 'dependencies'
+change-template: '- $TITLE @$AUTHOR (#$NUMBER)'
+version-resolver:
+  major:
+    labels:
+      - 'major'
+  minor:
+    labels:
+      - 'minor'
+  patch:
+    labels:
+      - 'patch'
+  default: minor
+template: |
+  ## Changes
+
+  $CHANGES
+
+  ## Contributors
+
+  $CONTRIBUTORS
