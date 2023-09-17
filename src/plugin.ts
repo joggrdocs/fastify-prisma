@@ -65,6 +65,6 @@ const prismaPlugin: FastifyPluginAsync<PrismaPluginOptions> = async function (
 };
 
 export default fp<PrismaPluginOptions>(prismaPlugin, {
-  name: '@joggrdocs/fastify-prisma',
+  name: '@joggr/fastify-prisma',
   fastify: '4.x'
 });
