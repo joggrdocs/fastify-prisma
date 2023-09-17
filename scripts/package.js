@@ -16,9 +16,13 @@ const exec = util.promisify(childProcess.exec);
 
 // Utils
 
-const preparePackageJson = async () => {
+const preparePackageJsonContents = async () => {
   const packageJsonStringified = await readFile(
     path.resolve(rootDir, 'package.json'),
+    'utf8'
+  );
+  const packageLockJsonStringified = await readFile(
+    path.resolve(rootDir, 'package-lock.json'),
     'utf8'
   );
 
@@ -30,26 +34,49 @@ const preparePackageJson = async () => {
     ...packageJson
   } = JSON.parse(packageJsonStringified);
 
+  const {
+    packages: _packages,
+    version: _version,
+    ...packageLockJson
+  } = JSON.parse(packageLockJsonStringified);
+
   // Get the version from the tag
   const version = process.env.TAG.replace('v', '');
 
   // Prepare the scripts
   const scripts = {};
 
-  return {
+  const packageJsonBuilt = {
     ...packageJson,
     scripts,
     version,
     main: 'index.js',
     dependencies: packageJson.dependencies
   };
+
+  return {
+    packageLockJson: {
+      ...packageLockJson,
+      version,
+      packages: {
+        '': packageJsonBuilt
+      }
+    },
+    packageJson: packageJsonBuilt
+  };
 };
 
-const writePackageJson = async packageJson => {
+const writePackageJson = async ({ packageJson, packageLockJson }) => {
   const packageJsonStringified = JSON.stringify(packageJson, null, 2);
+  const packageLockJsonStringified = JSON.stringify(packageLockJson, null, 2);
+
   await writeFile(
     path.resolve(distDir, 'package.json'),
     packageJsonStringified
+  );
+  await writeFile(
+    path.resolve(distDir, 'package-lock.json'),
+    packageLockJsonStringified
   );
 };
 
@@ -79,8 +106,8 @@ const prepareThePackage = async () => {
   });
 
   // Prepare the package.json
-  const packageJson = await preparePackageJson();
-  await writePackageJson(packageJson);
+  const packageJsonContents = await preparePackageJsonContents();
+  await writePackageJson(packageJsonContents);
 
   // Copy the core files
   await copyCoreFiles([
