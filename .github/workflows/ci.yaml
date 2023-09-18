@@ -22,15 +22,16 @@ jobs:
         with:
           node-version: 18
       - name: Test
+        working-directory: .
         run: touch foo.yaml && echo "test" >> foo.yaml
       - name: Try and commit
+        working-directory: .
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git remote set-url origin "https://${GITHUB_ACTOR}:${GITHUB_TOKEN}@${GITHUB_REPOSITORY_OWNER}/${GITHUB_REPOSITORY}"
           git add "foo.yaml"
           git commit --no-verify -am "A test [skip ci]"
-          git push --force-with-lease origin chore/test-git-in-ci
+          git push "https://${GITHUB_ACTOR}:${GITHUB_TOKEN}@${GITHUB_REPOSITORY_OWNER}/${GITHUB_REPOSITORY}.git" --force-with-lease "chore/test-git-in-ci"
 
       # - name: Install Packages
       #   run: npm install
