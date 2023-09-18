@@ -50,3 +50,22 @@ In general, we follow the ["fork-and-pull" Git workflow](https://github.com/susa
 5. Following any formatting and testing guidelines specific to this repo
 6. Push changes to your fork
 7. Open a PR in our repository and follow the PR template so that we can efficiently review the changes.
+
+## Releases
+
+All releases are handled via the GitHub release publishing process. Release notes are automatically created based on the 
+merged pull requests. To cut a release you need to do the following:
+
+1. Check the current release draft for the version (tag)
+2. Pull the repo locally, and run `npm version` with the correct version (tag) as determined by the release draft
+3. Create a PR titled "Release vX.X.X" and add the label `skip-changelog`
+4. Merge the PR and publish the release
+
+### Failed Release due to `npm version`
+
+If you don't properly match the `npm version` with the tag, it will block the release from being published. If you get into this state you need to:
+
+1. Delete the release
+2. Delete the tag
+3. Manually re-run the "Release Drafter" using `workflow_dispatch`
+4. Go through the release process again (and don't screw it up)
