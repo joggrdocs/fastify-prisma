@@ -22,17 +22,19 @@ jobs:
         run: npm run package
         env:
           TAG: ${{ github.ref_name }}
-      - name: ✉️ Publish
-        run: npm publish --access public
-        working-directory: ./dist
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_PUBLISH }}
       - name: 📝 Update Source Version
-        run: npm run package:increment 
-      - name: Commit changes verion updates
+        run: npm run package:increment
+        env:
+          TAG: ${{ github.ref_name }}
+      - name: 💽 Commit changes version increment
         run: |
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git config --global user.name "GitHub Actions"
           git add -A
           git commit -am "⚙️ Chore - update npm version in source to match tag [skip ci]"
-          git push
+          git push 
+      - name: ✉️ Publish
+        run: npm publish --access public
+        working-directory: ./dist
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_PUBLISH }}

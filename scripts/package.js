@@ -134,4 +134,7 @@ const prepareThePackage = async () => {
 
 prepareThePackage()
   .then(() => console.log('📦 Packaged & ready to publish'))
-  .catch(err => console.error(`Failed to package: ${err.message}`));
+  .catch(err => {
+    console.error(`Failed to package: ${err.message}`);
+    process.exit(1);
+  });
