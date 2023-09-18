@@ -11,6 +11,20 @@ jobs:
     steps:
       - name: 🛒 Checkout Code
         uses: actions/checkout@v3
+      - name: Check if package.json Version matches tag
+        uses: actions/github-script@v6
+        env:
+          TAG: ${{ github.ref_name }}
+        with:
+          script: |
+            const fs = require('fs')
+            const packageJson = JSON.parse(fs.readFileSync('${{ github.workspace }}/package.json'))
+            const pjv = packageJson.version
+            const tv = process.env.TAG.replace('v', '')
+
+            if (pjv !== tv) {
+              throw new Error(`The tagged release, ${tv}, doesn't match the package.json version, ${pjv}. Please fix the issue, delete the tag & release and try again.`)
+            }
       - name: 🟢 Use Node.js v18
         uses: actions/setup-node@v3
         with:
@@ -27,24 +41,3 @@ jobs:
         working-directory: ./dist
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_PUBLISH }}
-  sync-repo-version:
-    name: Sync npm version with source code
-    runs-on: ubuntu-latest
-    needs: [ publish ]
-    steps:
-      - name: 🛒 Checkout Code
-        uses: actions/checkout@v3
-      - name: 📝 Update source code version with npm published version
-        run: npm run package:increment
-        env:
-          TAG: ${{ github.ref_name }}
-      - name: 💽 Commit changes for version increment
-        uses: stefanzweifel/git-auto-commit-action@v4
-        with:
-          commit_message: ":gear: Chore - Update version in package.json & package-lock.json to match release version: ${{ github.ref_name }}"
-          branch: main
-          commit_options: '--no-verify'
-          file_pattern: 'package.json package-lock.json'
-          commit_user_name: github-actions[bot]
-          commit_user_email: github-actions[bot]@users.noreply.github.com
-          commit_author: ReleaseBot <github-actions[bot]@users.noreply.github.com> 
