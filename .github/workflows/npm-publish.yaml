@@ -29,10 +29,11 @@ jobs:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_PUBLISH }}
       - name: 📝 Update Version
         run: |
-          npm version patch
+          npm run package:increment 
       - name: Commit changes verion updates
         run: |
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git config --global user.name "GitHub Actions"
+          git add -A
           git commit -am "⚙️ Chore - update npm version in source to match tag [skip ci]"
           git push
