@@ -12,23 +12,46 @@ jobs:
   lintAndTest:
     name: Lint & Test
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
       - name: Checkout Code
-        uses: actions/checkout@v1
-      - name: Use Node.js v18
-        uses: actions/setup-node@v1
+        uses: actions/checkout@v3
         with:
-          node-version: 18
-      - name: Install Packages
-        run: npm install
-      - name: Format
-        run: npm run format:check
-      - name: Lint
-        run: npm run lint:check
-      - name: Type Check
-        run: npm run type:check
-      - name: Generate Prisma Client for Tests
-        working-directory: tests 
-        run: npx prisma generate
+          persist-credentials: false # otherwise, the token used is the GITHUB_TOKEN, instead of your personal token
+          fetch-depth: 0 # otherwise, you will failed to push refs to dest repo
       - name: Test
-        run: npm test
+        working-directory: .
+        run: touch foo.yaml && echo "test" >> foo.yaml
+      - name: Commit & Push changes
+        uses: actions-js/push@master
+        with:
+          branch: "chore/test-git-in-ci"
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+      # - name: Use Node.js v18
+      #   uses: actions/setup-node@v3
+      #   with:
+      #     node-version: 18
+
+      # - name: Try and commit
+      #   working-directory: .
+      #   run: |
+      #     git config --global user.name "github-actions[bot]"
+      #     git config --global user.email "github-actions[bot]@users.noreply.github.com"
+      #     git add "foo.yaml"
+      #     git commit --no-verify -am "A test [skip ci]"
+      #     git push "https://${GITHUB_ACTOR}:${GITHUB_TOKEN}@${GITHUB_REPOSITORY_OWNER}/${GITHUB_REPOSITORY}.git" --force-with-lease "chore/test-git-in-ci"
+
+      # - name: Install Packages
+      #   run: npm install
+      # - name: Format
+      #   run: npm run format:check
+      # - name: Lint
+      #   run: npm run lint:check
+      # - name: Type Check
+      #   run: npm run type:check
+      # - name: Generate Prisma Client for Tests
+      #   working-directory: tests 
+      #   run: npx prisma generate
+      # - name: Test
+      #   run: npm test
