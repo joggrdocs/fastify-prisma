@@ -16,6 +16,14 @@ const exec = util.promisify(childProcess.exec);
 
 // Utils
 
+const getTag = () => {
+  if (process.env.TAG) {
+    return process.env.TAG.replace('v', '');
+  } else {
+    throw new Error('No tag found');
+  }
+};
+
 const preparePackageJsonContents = async () => {
   const packageJsonStringified = await readFile(
     path.resolve(rootDir, 'package.json'),
@@ -28,7 +36,6 @@ const preparePackageJsonContents = async () => {
 
   // Extract the fields we want to manipulate & leave the rest as is (e.g. devDependencies)
   const {
-    devDependencies: _devDependencies,
     scripts: _scripts,
     main: _main,
     ...packageJson
@@ -41,7 +48,7 @@ const preparePackageJsonContents = async () => {
   } = JSON.parse(packageLockJsonStringified);
 
   // Get the version from the tag
-  const version = process.env.TAG.replace('v', '');
+  const version = getTag();
 
   // Prepare the scripts
   const scripts = {};

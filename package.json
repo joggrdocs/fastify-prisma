@@ -1,6 +1,6 @@
 {
   "name": "@joggr/fastify-prisma",
-  "version": "0.0.0",
+  "version": "1.0.1",
   "description": "Fastify Prisma plugin connection to share the same connection across your entire server.",
   "main": "dist/index.js",
   "scripts": {
@@ -13,6 +13,7 @@
     "format:check": "prettier --check .",
     "format:fix": "prettier --write .",
     "package": "node ./scripts/package.js",
+    "package:increment": "node ./scripts/package-source-increment.js",
     "prepare": "husky install"
   },
   "repository": {
