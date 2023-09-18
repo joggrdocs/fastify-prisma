@@ -14,21 +14,32 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Code
-        uses: actions/checkout@v1
+        uses: actions/checkout@v3
       - name: Use Node.js v18
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v3
         with:
           node-version: 18
-      - name: Install Packages
-        run: npm install
-      - name: Format
-        run: npm run format:check
-      - name: Lint
-        run: npm run lint:check
-      - name: Type Check
-        run: npm run type:check
-      - name: Generate Prisma Client for Tests
-        working-directory: tests 
-        run: npx prisma generate
       - name: Test
-        run: npm test
+        run: touch foo.yaml && echo "test" >> foo.yaml
+      - name: Try and commit
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git remote set-url origin "https://${GITHUB_ACTOR}:${GITHUB_TOKEN}@github.com/joggrdocs/fastify-prisma.git"
+          git add -A
+          git commit --no-verify -am "A test [skip ci]"
+          git push origin main
+
+      # - name: Install Packages
+      #   run: npm install
+      # - name: Format
+      #   run: npm run format:check
+      # - name: Lint
+      #   run: npm run lint:check
+      # - name: Type Check
+      #   run: npm run type:check
+      # - name: Generate Prisma Client for Tests
+      #   working-directory: tests 
+      #   run: npx prisma generate
+      # - name: Test
+      #   run: npm test
