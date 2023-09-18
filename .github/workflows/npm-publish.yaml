@@ -32,7 +32,7 @@ jobs:
           git config --global user.name "GitHub Actions"
           git add -A
           git commit --no-verify -am "⚙️ Chore - update npm version in source to match tag [skip ci]"
-          git push 
+          git push origin HEAD:main
       - name: ✉️ Publish
         run: npm publish --access public
         working-directory: ./dist
