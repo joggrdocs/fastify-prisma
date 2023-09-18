@@ -6,6 +6,10 @@
 
 Fastify Prisma plugin to share the same `PrismaClient` across your entire server.
 
+```typescript
+const allTheDucks = await server.prisma.rubberDucky.findMany();
+```
+
 ## Getting Started
 
 Before using this plugin you will need to have [`prisma`](https://www.prisma.io/docs/getting-started) set up. Once you are all set with `prisma` install the package and register the plugin on your server.
@@ -73,6 +77,18 @@ await fastify.register(fastifyPrisma, {
     log: [{ emit: 'event', level: 'query' }]
   }
 });
+```
+### Accessing the `prisma` client
+
+```typescript
+
+async function somePlugin (server, opts) {
+  const ducks = await server.prisma.rubberDucky.findMany();
+
+  // do something with the ducks, log for now
+  server.log.warn({ ducks }, "🐥🐥 There are lots of ducks! 🐥🐥");
+}
+
 ```
 
 ## License
