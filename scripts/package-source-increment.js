@@ -77,4 +77,7 @@ const updateTheVersion = async () => {
 
 updateTheVersion()
   .then(() => console.log('⬆️ Packaged version incremented'))
-  .catch(err => console.error(`Failed to increment: ${err.message}`));
+  .catch(err => {
+    console.error(`Failed to increment: ${err.message}`);
+    process.exit(1);
+  });
