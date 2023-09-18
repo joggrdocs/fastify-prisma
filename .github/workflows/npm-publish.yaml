@@ -8,8 +8,6 @@ jobs:
   publish:
     name: Publish
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
     steps:
       - name: 🛒 Checkout Code
         uses: actions/checkout@v1
@@ -30,14 +28,17 @@ jobs:
           TAG: ${{ github.ref_name }}
       - name: 💽 Commit changes version increment
         run: |
+          cd .
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git remote set-url origin "https://${GITHUB_ACTOR}:${GITHUB_TOKEN}@github.com/joggrdocs/fastify-prisma.git"
-          git add -A
-          git commit --no-verify -am "⚙️ Chore - update npm version in source to match tag [skip ci]"
-          git push origin HEAD:main
+          git add "package.json"
+          git add "package-lock.json"
+          git commit --no-verify -m "⚙️ Chore - update npm version to `${GITHUB_REF_NAME}` in source to match tag [skip ci]"
+          git push "https://${GITHUB_ACTOR}:${GITHUB_TOKEN}@github.com/joggrdocs/fastify-prisma.git" HEAD:"main"
       - name: ✉️ Publish
         run: npm publish --access public
         working-directory: ./dist
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_PUBLISH }}
+  
