@@ -27,9 +27,8 @@ jobs:
         working-directory: ./dist
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_PUBLISH }}
-      - name: 📝 Update Version
-        run: |
-          npm run package:increment 
+      - name: 📝 Update Source Version
+        run: npm run package:increment 
       - name: Commit changes verion updates
         run: |
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
