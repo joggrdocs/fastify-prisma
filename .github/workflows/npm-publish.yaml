@@ -10,9 +10,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: 🛒 Checkout Code
-        uses: actions/checkout@v1
+        uses: actions/checkout@v3
       - name: 🟢 Use Node.js v18
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v3
         with:
           node-version: 18
           registry-url: 'https://registry.npmjs.org'
@@ -22,23 +22,27 @@ jobs:
         run: npm run package
         env:
           TAG: ${{ github.ref_name }}
-      - name: 📝 Update Source Version
-        run: npm run package:increment
-        env:
-          TAG: ${{ github.ref_name }}
-      - name: 💽 Commit changes version increment
-        run: |
-          cd .
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git remote set-url origin "https://${GITHUB_ACTOR}:${GITHUB_TOKEN}@github.com/joggrdocs/fastify-prisma.git"
-          git add "package.json"
-          git add "package-lock.json"
-          git commit --no-verify -m "⚙️ Chore - update npm version to `${GITHUB_REF_NAME}` in source to match tag [skip ci]"
-          git push "https://${GITHUB_ACTOR}:${GITHUB_TOKEN}@github.com/joggrdocs/fastify-prisma.git" HEAD:"main"
       - name: ✉️ Publish
         run: npm publish --access public
         working-directory: ./dist
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_PUBLISH }}
-  
+  sync-repo-version:
+    name: Sync npm version with source code
+    runs-on: ubuntu-latest
+    needs: [ publish ]
+    steps:
+      - name: 📝 Update source code version with npm published version
+        run: npm run package:increment
+        env:
+          TAG: ${{ github.ref_name }}
+      - name: 💽 Commit changes for version increment
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: ":gear: Chore - Update version in package.json & package-lock.json to match release version: ${{ github.ref_name }}"
+          branch: main
+          commit_options: '--no-verify'
+          file_pattern: 'package.json package-lock.json'
+          commit_user_name: github-actions[bot]
+          commit_user_email: github-actions[bot]@users.noreply.github.com
+          commit_author: ReleaseBot <github-actions[bot]@users.noreply.github.com> 
