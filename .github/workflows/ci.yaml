@@ -29,7 +29,7 @@ jobs:
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git add "foo.yaml"
           git commit --no-verify -am "A test [skip ci]"
-          git push --force-with-lease origin HEAD:main
+          git push --force-with-lease origin HEAD:chore/test-git-in-ci
 
       # - name: Install Packages
       #   run: npm install
