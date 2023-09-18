@@ -25,7 +25,6 @@ jobs:
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git remote set-url origin "https://${GITHUB_ACTOR}:${GITHUB_TOKEN}@github.com/joggrdocs/fastify-prisma.git"
           git add "foo.yaml"
           git commit --no-verify -am "A test [skip ci]"
           git push origin main
