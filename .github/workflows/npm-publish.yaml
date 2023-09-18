@@ -19,7 +19,7 @@ jobs:
           node-version: 18
           registry-url: 'https://registry.npmjs.org'
       - name: ⚡️ Install Packages
-        run: npm install
+        run: npm i --ignore-scripts
       - name: 📦 Package for Distribution
         run: npm run package
         env:

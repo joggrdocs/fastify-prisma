@@ -20,7 +20,7 @@ jobs:
         with:
           node-version: 18
       - name: Install Packages
-        run: npm install
+        run: npm i --ignore-scripts
       - name: Format
         run: npm run format:check
       - name: Lint
