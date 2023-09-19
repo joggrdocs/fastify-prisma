@@ -8,34 +8,34 @@ jobs:
   publish:
     name: Publish
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
     steps:
       - name: 🛒 Checkout Code
         uses: actions/checkout@v3
+      - name: Check if package.json Version matches tag
+        uses: actions/github-script@v6
+        env:
+          TAG: ${{ github.ref_name }}
+        with:
+          script: |
+            const fs = require('fs')
+            const packageJson = JSON.parse(fs.readFileSync('${{ github.workspace }}/package.json'))
+            const pjv = packageJson.version
+            const tv = process.env.TAG.replace('v', '')
+
+            if (pjv !== tv) {
+              throw new Error(`The tagged release, ${tv}, doesn't match the package.json version, ${pjv}. Please fix the issue, delete the tag & release and try again.`)
+            }
       - name: 🟢 Use Node.js v18
         uses: actions/setup-node@v3
         with:
           node-version: 18
           registry-url: 'https://registry.npmjs.org'
       - name: ⚡️ Install Packages
-        run: npm i --ignore-scripts
+        run: npm install --ignore-scripts
       - name: 📦 Package for Distribution
         run: npm run package
         env:
           TAG: ${{ github.ref_name }}
-      - name: 📝 Update Source Version
-        run: npm run package:increment
-        env:
-          TAG: ${{ github.ref_name }}
-      - name: 💽 Commit changes version increment
-        run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git remote set-url origin "https://${GITHUB_ACTOR}:${GITHUB_TOKEN}@github.com/joggrdocs/fastify-prisma.git"
-          git add -A
-          git commit --no-verify -am "⚙️ Chore - update npm version in source to match tag [skip ci]"
-          git push origin HEAD:main
       - name: ✉️ Publish
         run: npm publish --access public
         working-directory: ./dist
