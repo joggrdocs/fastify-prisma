@@ -23,7 +23,7 @@ jobs:
         with:
           node-version: 18
       - name: '📦 Install Packages'
-        run: npm install
+        run: npm ci 
       - name: '🎨 Code Formatting'
         run: npm run analyze:fmt
       - name: '⚙️ Code Linting'

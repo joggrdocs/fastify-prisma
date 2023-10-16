@@ -9,9 +9,9 @@ jobs:
     name: Publish
     runs-on: ubuntu-latest
     steps:
-      - name: 🛒 Checkout Code
+      - name: '🛒 Checkout Code'
         uses: actions/checkout@v3
-      - name: Check if package.json Version matches tag
+      - name: '☑️ Check if package.json Version matches tag'
         uses: actions/github-script@v6
         env:
           TAG: ${{ github.ref_name }}
@@ -25,18 +25,18 @@ jobs:
             if (pjv !== tv) {
               throw new Error(`The tagged release, ${tv}, doesn't match the package.json version, ${pjv}. Please fix the issue, delete the tag & release and try again.`)
             }
-      - name: 🟢 Use Node.js v18
+      - name: '🟢 Use Node.js v18'
         uses: actions/setup-node@v3
         with:
           node-version: 18
           registry-url: 'https://registry.npmjs.org'
-      - name: ⚡️ Install Packages
-        run: npm install
-      - name: 📦 Package for Distribution
+      - name: '⚡️ Install Packages'
+        run: npm ci
+      - name: '📦 Package for Distribution'
         run: npm run package
         env:
           TAG: ${{ github.ref_name }}
-      - name: ✉️ Publish
+      - name: '🚢 Publish'
         run: npm publish --access public
         working-directory: ./dist
         env:
