@@ -30,6 +30,9 @@ jobs:
         run: npm run analyze:lint
       - name: '🟦 Typecheck'
         run: npm run analyze:types
+      - name: '▲ Generate Prisma Client for Tests'
+        working-directory: tests 
+        run: npx prisma generate
       - name: '⚡️ Test'
         id: test
         run: npm run test

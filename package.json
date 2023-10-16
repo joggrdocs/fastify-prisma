@@ -31,7 +31,7 @@
   },
   "homepage": "https://github.com/joggrdocs/fastify-prisma#readme",
   "devDependencies": {
-    "@prisma/client": "^5.3.1",
+    "@prisma/client": "^5.4.2",
     "@swc/jest": "^0.2.29",
     "@types/jest": "^29.5.5",
     "@typescript-eslint/eslint-plugin": "^6.7.5",
