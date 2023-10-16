@@ -13,14 +13,12 @@ jobs:
         uses: actions/checkout@v3
       - name: '☑️ Check if package.json Version matches tag'
         uses: actions/github-script@v6
-        env:
-          TAG: ${{ github.ref_name }}
         with:
           script: |
             const fs = require('fs')
             const packageJson = JSON.parse(fs.readFileSync('${{ github.workspace }}/package.json'))
             const pjv = packageJson.version
-            const tv = process.env.TAG.replace('v', '')
+            const tv = "${{ github.ref_name }}".replace('v', '')
 
             if (pjv !== tv) {
               throw new Error(`The tagged release, ${tv}, doesn't match the package.json version, ${pjv}. Please fix the issue, delete the tag & release and try again.`)
@@ -34,8 +32,6 @@ jobs:
         run: npm ci
       - name: '📦 Package for Distribution'
         run: npm run package
-        env:
-          TAG: ${{ github.ref_name }}
       - name: '🚢 Publish'
         run: npm publish --access public
         working-directory: ./dist
