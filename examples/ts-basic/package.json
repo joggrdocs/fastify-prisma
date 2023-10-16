@@ -13,7 +13,7 @@
     "seed": "ts-node prisma/seed.ts"
   },
   "dependencies": {
-    "@joggr/fastify-prisma": "^0.2.0",
+    "@joggr/fastify-prisma": "latest",
     "@prisma/client": "^5.3.1",
     "fastify": "^4.23.2",
     "prisma": "^5.3.1",

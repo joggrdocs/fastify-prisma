@@ -1,5 +1,4 @@
 import { PrismaClient } from '@prisma/client';
-import type { PrismaClientOptions } from '@prisma/client/runtime/library';
 import type { FastifyPluginAsync } from 'fastify';
 import fp from 'fastify-plugin';
 
@@ -18,7 +17,10 @@ declare module 'fastify' {
   }
 }
 
-type PrismaClientConfig = Omit<PrismaClientOptions, '__internal'>;
+type PrismaClientConfig = Omit<
+  ConstructorParameters<typeof PrismaClient>[0],
+  '__internal'
+>;
 
 interface PrismaPluginOptionsWithClient {
   /**
@@ -38,7 +40,9 @@ export type PrismaPluginOptions =
   | PrismaPluginOptionsWithClient
   | PrismaPluginOptionsWithoutClient;
 
-const createClient = async (pluginOptions: PrismaPluginOptions) => {
+const createClient = async (
+  pluginOptions: PrismaPluginOptions
+): Promise<PrismaClient> => {
   if ('client' in pluginOptions) {
     return pluginOptions.client;
   } else {
@@ -64,6 +68,9 @@ const prismaPlugin: FastifyPluginAsync<PrismaPluginOptions> = async function (
   }
 };
 
+/**
+ * Fastify Prisma plugin connection to share the same connection across your entire server
+ */
 export default fp<PrismaPluginOptions>(prismaPlugin, {
   name: '@joggr/fastify-prisma',
   fastify: '4.x'
