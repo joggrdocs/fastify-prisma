@@ -2,7 +2,7 @@
   "name": "@joggr/fastify-prisma",
   "version": "1.1.0",
   "description": "Fastify Prisma plugin connection to share the same connection across your entire server.",
-  "main": "dist/index.js",
+  "main": "index.js",
   "scripts": {
     "build": "tsc",
     "test": "jest",
@@ -12,6 +12,7 @@
     "analyze:lint": "eslint src/**/*.ts",
     "analyze:fmt": "prettier --check .",
     "analyze:fix": "prettier --write . && eslint src/**/*.ts --fix",
+    "package": "node ./scripts/package.js",
     "prepare": "husky install"
   },
   "repository": {
