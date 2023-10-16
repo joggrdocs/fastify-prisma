@@ -12,8 +12,7 @@
     "analyze:lint": "eslint src/**/*.ts",
     "analyze:fmt": "prettier --check .",
     "analyze:fix": "prettier --write . && eslint src/**/*.ts --fix",
-    "package": "node ./scripts/package.js",
-    "prepare": "husky install"
+    "package": "node ./scripts/package.js"
   },
   "repository": {
     "type": "git",

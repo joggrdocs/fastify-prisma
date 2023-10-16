@@ -51,6 +51,16 @@ In general, we follow the ["fork-and-pull" Git workflow](https://github.com/susa
 6. Push changes to your fork
 7. Open a PR in our repository and follow the PR template so that we can efficiently review the changes.
 
+## Development
+
+### Husky & Pre-Commit Hooks
+
+You need to set up Husky before you can start developing. This will ensure that your commits are linted and tested before they are pushed to the remote.
+
+```bash
+husky install
+```
+
 ## Publishing
 
 ### Build & Packaging
