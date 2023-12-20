@@ -46,7 +46,7 @@ await fastify.register(fastifyPrisma);
 
 // With client
 await fastify.register(fastifyPrisma, {
-  client: new PrismaClient();
+  client: new PrismaClient(),
 });
 
 // with options
@@ -68,7 +68,7 @@ await fastify.register(fastifyPrisma);
 
 // With client
 await fastify.register(fastifyPrisma, {
-  client: new PrismaClient();
+  client: new PrismaClient(),
 });
 
 // with options
