@@ -63,11 +63,16 @@ husky install
 
 ## Publishing
 
+### Version Incrementing
+
+We use `npm version` for incrementing so to increment before a release, you can just pull the repo locally, and run `npm version` with the correct version (tag) as determined by the release draft OR based on your own determination.
+
 ### Build & Packaging
 
 We have a custom script that builds & packages all the necessary files for publishing. 
 
 ```bash
+# 🚨 WARNING 🚨 - remember to increment before packaging!
 $ npm run package
 ```
 
@@ -80,8 +85,10 @@ merged pull requests. To cut a release you need to do the following:
 
 1. Check the current release draft for the version (tag)
 2. Pull the repo locally, and run `npm version` with the correct version (tag) as determined by the release draft
-3. Create a PR titled "Release vX.X.X" and add the label `skip-changelog`
-4. Merge the PR and publish the release
+3. Package it by running `npm run package`
+4. Commit & push to remote by running `git commit -am "Release - vX.X.X"` and `git push`
+5. Create a PR titled "Release vX.X.X" and add the label `skip-changelog`
+6. Merge the PR and publish the release
 
 ### Failed Release due to `npm version`
 
