@@ -19,13 +19,13 @@ Before using this plugin you will need to have [`prisma`](https://www.prisma.io/
 **npm**
 
 ```shell
-$ npm i fastify-prisma
+$ npm i @joggr/fastify-prisma
 ```
 
 **yarn**
 
 ```shell
-$ yarn add fastify-prisma
+$ yarn add @joggr/fastify-prisma
 ```
 
 ### Register the plugin
@@ -39,7 +39,7 @@ You have two options for registering the plugin:
 
 ```javascript
 const { PrismaClient } = require('@prisma/client');
-const fastifyPrisma = require('fastify-prisma');
+const fastifyPrisma = require('@joggr/fastify-prisma');
 
 // Default
 await fastify.register(fastifyPrisma);
@@ -61,7 +61,7 @@ await fastify.register(fastifyPrisma, {
 
 ```typescript
 import { PrismaClient } from '@prisma/client';
-import fastifyPrisma from 'fastify-prisma';
+import fastifyPrisma from '@joggr/fastify-prisma';
 
 // Default
 await fastify.register(fastifyPrisma);
