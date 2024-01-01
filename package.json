@@ -7,7 +7,7 @@
     "build": "tsc",
     "test": "jest",
     "lint-staged": "lint-staged",
-    "analyze": "yarn analyze:fmt && yarn analyze:lint && yarn analyze:types",
+    "analyze": "npm run analyze:fmt && npm run analyze:lint && npm run analyze:types",
     "analyze:types": "tsc --noEmit",
     "analyze:lint": "eslint src/**/*.ts",
     "analyze:fmt": "prettier --check .",
