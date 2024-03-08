@@ -34,7 +34,7 @@
     "@prisma/client": "^5.4.2",
     "@swc/jest": "^0.2.29",
     "@types/jest": "^29.5.5",
-    "@typescript-eslint/eslint-plugin": "^6.7.5",
+    "@typescript-eslint/eslint-plugin": "^7.0.0",
     "@typescript-eslint/parser": "^6.7.0",
     "eslint": "^8.51.0",
     "eslint-config-prettier": "^9.0.0",
