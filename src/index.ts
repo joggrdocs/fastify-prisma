@@ -1,2 +1,2 @@
-export type { PrismaPluginOptions } from './plugin';
-export { default } from './plugin';
+export type { PrismaPluginOptions } from './lib/plugin';
+export { default } from './lib/plugin';
