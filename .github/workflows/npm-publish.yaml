@@ -50,8 +50,8 @@ jobs:
         run: |
           git config --local user.email "${{ secrets.GH_ADMIN_EMAIL }}"
           git config --local user.name "${{ secrets.GH_ADMIN_NAME }}"
-          git add package.json
-          git commit -am "[🤖 release]: ${{ steps.version.outputs.result }} (${{ inputs.version }})"
+          git add ./package.json
+          git commit -am "[🤖 npm-publish]: ${{ steps.version.outputs.result }} (${{ inputs.version }})"
           git push origin HEAD --force
 
       - name: '📝 Generate Release Notes (user-input)'
