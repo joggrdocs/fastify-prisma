@@ -28,6 +28,8 @@
     "**/__tests__/**/*",
     "tests",
     "action.js",
-    ".eslintrc.js"
+    "eslint.config.js",
+    "vite.config.mts",
+    "vitest.config.mts"
   ]
 }
