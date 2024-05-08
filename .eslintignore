@@ -8,3 +8,9 @@ coverage
 scripts
 # don't lint test setup
 jest-setup.js
+# don't lint linter
+.eslintrc.js
+# don't lint yarn generated files
+yarn.lock
+.pnp.cjs
+.pnp.loader.mjs

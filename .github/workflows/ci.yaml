@@ -23,7 +23,7 @@ jobs:
         with:
           node-version: 20
       - name: '📦 Install Packages'
-        run: yarn 
+        run: yarn --immutable --immutable-cache --check-cache
       - name: '🎨 Code Formatting'
         run: yarn analyze:fmt
       - name: '⚙️ Code Linting'

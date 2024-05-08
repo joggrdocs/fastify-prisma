@@ -15,3 +15,8 @@ imports
 
 # Ignore test files
 src/__tests__/node_modules/
+
+# don't lint yarn generated files
+yarn.lock
+.pnp.cjs
+.pnp.loader.mjs

@@ -7,21 +7,23 @@ categories:
   - title: '🚀 Features'
     labels:
       - 'enhancement'
-  - title: '🔥 Hot Fixes'
+  - title: '🔥 Hotfixes'
     labels:
       - 'hotfix'
-  - title: '🐛 Bug Fixes'
+  - title: '🐛 Bugfixes'
     labels:
       - 'bugfix'
-  - title: '🧰 Maintenance'
+  - title: '🧰 Chores'
     labels:
       - 'maintenance'
       - 'chore'
       - 'maintain'
-  - title: '👮 Security'
-    label: 'security'
-  - title: '🤖 Dependabot'
-    label: 'dependencies'
+  - title: '🛡️ Security'
+    labels: 
+      - 'security'
+  - title: '📦 Dependencies'
+    labels:
+      - 'dependencies'
 change-template: '- $TITLE @$AUTHOR (#$NUMBER)'
 exclude-labels:
   - 'skip-changelog'
