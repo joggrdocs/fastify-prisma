@@ -15,7 +15,6 @@
   "files": [
     "README.md",
     "package.json",
-    "yarn.lock",
     "LICENSE",
     "dist/**/*"
   ],
@@ -50,9 +49,6 @@
     "@eslint/js": "^9.2.0",
     "@joggr/eslint-config": "^1.1.2",
     "@prisma/client": "^5.13.0",
-    "@swc/cli": "^0.3.12",
-    "@swc/core": "^1.5.3",
-    "@swc/jest": "^0.2.36",
     "@types/eslint": "^8.56.10",
     "@types/jest": "^29.5.12",
     "@typescript-eslint/eslint-plugin": "^7.8.0",
