@@ -18,21 +18,21 @@ jobs:
     steps:
       - name: '⬇️ Checkout Code'
         uses: actions/checkout@v4
-      - name: '💚 Use Node.js v18'
-        uses: actions/setup-node@v1
+      - name: '💚 Use Node.js v20'
+        uses: actions/setup-node@v4
         with:
-          node-version: 18
+          node-version: 20
       - name: '📦 Install Packages'
-        run: npm ci 
+        run: yarn 
       - name: '🎨 Code Formatting'
-        run: npm run analyze:fmt
+        run: yarn analyze:fmt
       - name: '⚙️ Code Linting'
-        run: npm run analyze:lint
+        run: yarn analyze:lint
       - name: '🟦 Typecheck'
-        run: npm run analyze:types
+        run: yarn analyze:types
       - name: '▲ Generate Prisma Client for Tests'
         working-directory: tests 
-        run: npx prisma generate
+        run: yarn dlx prisma generate
       - name: '⚡️ Test'
         id: test
-        run: npm run test
+        run: yarn test
