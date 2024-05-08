@@ -24,15 +24,20 @@ jobs:
           node-version: 20
       - name: '📦 Install Packages'
         run: yarn --immutable --immutable-cache --check-cache
+        
       - name: '🎨 Code Formatting'
         run: yarn analyze:fmt
+
       - name: '⚙️ Code Linting'
         run: yarn analyze:lint
+
       - name: '🟦 Typecheck'
         run: yarn analyze:types
+
       - name: '▲ Generate Prisma Client for Tests'
         working-directory: tests 
         run: yarn dlx prisma generate
+
       - name: '⚡️ Test'
         id: test
         run: yarn test
