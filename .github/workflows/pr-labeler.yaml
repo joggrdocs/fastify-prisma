@@ -14,7 +14,7 @@ jobs:
     runs-on: ubuntu-latest
     if: ${{ !github.event.pull_request.draft }}
     steps:
-      - uses: TimonVS/pr-labeler-action@v3
+      - uses: TimonVS/pr-labeler-action@v5
         with:
           configuration-path: .github/pr-labeler.yml # optional, .github/pr-labeler.yml is the default value
         env:
