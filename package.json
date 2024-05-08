@@ -12,6 +12,13 @@
   "module": "./dist/index.mjs",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
+  "files": [
+    "README.md",
+    "package.json",
+    "yarn.lock",
+    "LICENSE",
+    "dist/**/*"
+  ],
   "scripts": {
     "build": "rimraf ./dist && vite build",
     "test": "vitest",
@@ -20,8 +27,7 @@
     "analyze:lint": "eslint src/**/*.ts",
     "analyze:fmt": "prettier --check .",
     "analyze": "npm run analyze:fmt && npm run analyze:lint && npm run analyze:types",
-    "fix": "prettier --write . && eslint src/**/*.ts --fix",
-    "package": "node ./scripts/package.cjs"
+    "fix": "prettier --write . && eslint src/**/*.ts --fix"
   },
   "repository": {
     "type": "git",
