@@ -11,9 +11,12 @@ import viteTsconfigPaths from 'vite-tsconfig-paths';
  */
 export default defineViteConfig({
   base: '/',
+  mode: 'production',
   plugins: [viteDts(), viteTsconfigPaths()],
   build: {
+    target: ['node20', 'esnext'],
     outDir: path.join(__dirname, 'dist'),
+    ssr: true,
     lib: {
       entry: {
         index: path.resolve(__dirname, 'src/index.ts')

@@ -8,16 +8,20 @@ const config = {
   parserOptions: {
     tsconfigRootDir: __dirname,
     project: ['./tsconfig.json']
-  }
+  },
+  ignorePatterns: [
+    'dist',
+    'node_modules',
+    'coverage',
+    'scripts',
+    'vite.config.mts',
+    'vitest.config.mts',
+    'eslint.config.js'
+  ]
 };
 
 const compat = new FlatCompat({
   recommendedConfig: js.configs.recommended
 });
 
-module.exports = [
-  ...compat.config(config),
-  {
-    ignores: ['node_modules/*', 'dist/*', 'coverage/*', 'scripts/*']
-  }
-];
+module.exports = [...compat.config(config)];
