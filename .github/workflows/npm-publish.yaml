@@ -48,8 +48,8 @@ jobs:
       - name: '💾 Commit Incremented Version'
         if: ${{ inputs.version != 'calculate' }}
         run: |
-          git config --local user.email "<>"
-          git config --local user.name "Mr. Release Bot [bot]"
+          git config --local user.email "${{ secrets.GH_ADMIN_EMAIL }}"
+          git config --local user.name "${{ secrets.GH_ADMIN_NAME }}"
           git add package.json
           git commit -am "[🤖 release]: ${{ steps.version.outputs.result }} (${{ inputs.version }})"
           git push origin HEAD
