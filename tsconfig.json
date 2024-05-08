@@ -23,5 +23,11 @@
   },
   "typeRoots": ["node_modules/@types", "types"],
   "include": ["types/**/*", "src/**/*"],
-  "exclude": ["node_modules/**/*", "**/__tests__/**/*", "tests", "action.js"]
+  "exclude": [
+    "node_modules/**/*",
+    "**/__tests__/**/*",
+    "tests",
+    "action.js",
+    ".eslintrc.js"
+  ]
 }
