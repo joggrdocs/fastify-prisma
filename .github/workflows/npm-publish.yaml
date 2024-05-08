@@ -52,7 +52,7 @@ jobs:
           git config --local user.name "${{ secrets.GH_ADMIN_NAME }}"
           git add package.json
           git commit -am "[🤖 release]: ${{ steps.version.outputs.result }} (${{ inputs.version }})"
-          git push origin HEAD
+          git push origin HEAD --force
 
       - name: '📝 Generate Release Notes (user-input)'
         uses: toolmantim/release-drafter@v6
