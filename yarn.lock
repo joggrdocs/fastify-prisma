@@ -2853,13 +2853,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"enhanced-resolve@npm:^5.15.0":
-  version: 5.16.1
-  resolution: "enhanced-resolve@npm:5.16.1"
+"enhanced-resolve@npm:^5.17.0":
+  version: 5.17.0
+  resolution: "enhanced-resolve@npm:5.17.0"
   dependencies:
     graceful-fs: "npm:^4.2.4"
     tapable: "npm:^2.2.0"
-  checksum: 10/1c44474437ec52d938ee0776d5883d5fec8fc645bccbebf6eb58229f3223c111bc1f5cb94222949a5a4565e7a2d7c34f03a0f7e97c10d6cd800e7a46c95e3aec
+  checksum: 10/8f7bf71537d78e7d20a27363793f2c9e13ec44800c7c7830364a448f80a44994aa19d64beecefa1ab49e4de6f7fbe18cc0931dc449c115f02918ff5fcbe7705f
   languageName: node
   linkType: hard
 
@@ -3268,11 +3268,11 @@ __metadata:
   linkType: hard
 
 "eslint-plugin-n@npm:^17.5.1":
-  version: 17.5.1
-  resolution: "eslint-plugin-n@npm:17.5.1"
+  version: 17.9.0
+  resolution: "eslint-plugin-n@npm:17.9.0"
   dependencies:
     "@eslint-community/eslint-utils": "npm:^4.4.0"
-    enhanced-resolve: "npm:^5.15.0"
+    enhanced-resolve: "npm:^5.17.0"
     eslint-plugin-es-x: "npm:^7.5.0"
     get-tsconfig: "npm:^4.7.0"
     globals: "npm:^15.0.0"
@@ -3281,7 +3281,7 @@ __metadata:
     semver: "npm:^7.5.3"
   peerDependencies:
     eslint: ">=8.23.0"
-  checksum: 10/80ee93286ff9d3bd411f77e2be9ae8013c76a626ec81add1b11fb90bf88f935ca139d68364398aeb586a270f2f7b0672ddaf574df9cf1b78ef21eb56e8e23d6b
+  checksum: 10/b1f4753d67e58b3a2dd5adb24f06d7f2ab731622f4b0f38ea980f236f1f5bd6edb97257c81ba545eec97c556213cc65d16e7118064eef302f7ab611fef6accd0
   languageName: node
   linkType: hard
 
