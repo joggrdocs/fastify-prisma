@@ -7,16 +7,16 @@ async function main() {
     update: {},
     create: {
       email: 'alice@prisma.io',
-      name: 'Alice'
-    }
+      name: 'Alice',
+    },
   });
   const bob = await prisma.rubberDucky.upsert({
     where: { email: 'bob@prisma.io' },
     update: {},
     create: {
       email: 'bob@prisma.io',
-      name: 'Bob'
-    }
+      name: 'Bob',
+    },
   });
   console.log({ alice, bob });
 }
@@ -25,7 +25,7 @@ main()
   .then(async () => {
     await prisma.$disconnect();
   })
-  .catch(async e => {
+  .catch(async (e) => {
     console.error(e);
     await prisma.$disconnect();
     process.exit(1);

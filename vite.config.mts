@@ -19,18 +19,18 @@ export default defineViteConfig({
     ssr: true,
     lib: {
       entry: {
-        index: path.resolve(__dirname, 'src/index.ts')
+        index: path.resolve(__dirname, 'src/index.ts'),
       },
-      name: 'config'
+      name: 'config',
     },
     rollupOptions: {
       external: ['@prisma/client', 'fastify-plugin'],
       output: {
         globals: {
           '@prisma/client': 'PrismaClient',
-          'fastify-plugin': 'fp'
-        }
-      }
-    }
-  }
+          'fastify-plugin': 'fp',
+        },
+      },
+    },
+  },
 });

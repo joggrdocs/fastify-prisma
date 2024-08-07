@@ -1,4 +1,4 @@
-name: 'CI'
+name: 'ci: Code Standards & Testing'
 
 on:
   pull_request:
@@ -18,19 +18,18 @@ jobs:
     steps:
       - name: '⬇️ Checkout Code'
         uses: actions/checkout@v4
+
       - name: '💚 Use Node.js v20'
         uses: actions/setup-node@v4
         with:
           node-version: 20
+
       - name: '📦 Install Packages'
         run: yarn --immutable --immutable-cache --check-cache
         
-      - name: '🎨 Code Formatting'
-        run: yarn analyze:fmt
-
-      - name: '⚙️ Code Linting'
-        run: yarn analyze:lint
-
+      - name: '🎨 Code Formatting & Linting'
+        run: yarn analyze:ci
+        
       - name: '🟦 Typecheck'
         run: yarn analyze:types
 

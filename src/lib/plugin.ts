@@ -50,15 +50,15 @@ const createClient = async (
   }
 };
 
-const prismaPlugin: FastifyPluginAsync<PrismaPluginOptions> = async function (
+const prismaPlugin: FastifyPluginAsync<PrismaPluginOptions> = async (
   fastify,
   opts
-) {
+) => {
   if (!fastify.hasDecorator('prisma')) {
     const client = await createClient(opts);
     await client.$connect();
     fastify.decorate('prisma', client);
-    fastify.addHook('onClose', async server => {
+    fastify.addHook('onClose', async (server) => {
       await server.prisma.$disconnect();
     });
   } else {
@@ -73,5 +73,5 @@ const prismaPlugin: FastifyPluginAsync<PrismaPluginOptions> = async function (
  */
 export default fp<PrismaPluginOptions>(prismaPlugin, {
   name: '@joggr/fastify-prisma',
-  fastify: '4.x'
+  fastify: '4.x',
 });

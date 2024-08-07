@@ -1,10 +1,10 @@
-import Fastify from 'fastify';
 import fastifyPrisma from '@joggr/fastify-prisma';
+import Fastify from 'fastify';
 
-import rubberDuckies from './routes/rubberDuckies';
+import rubberDuckies from './routes/rubber-duckies';
 
 const fastify = Fastify({
-  logger: true
+  logger: true,
 });
 
 const start = async () => {

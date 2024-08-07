@@ -1,5 +1,5 @@
-import Fastify from 'fastify';
 import { PrismaClient } from '@prisma/client';
+import Fastify from 'fastify';
 
 import prismaPlugin from '../src/index';
 
@@ -38,8 +38,8 @@ describe('plugin', () => {
       clientConfig: {
         // Testing via emitting events
         // @link https://www.prisma.io/docs/concepts/components/prisma-client/working-with-prismaclient/logging#the-log-option
-        log: [{ emit: 'event', level: 'query' }]
-      }
+        log: [{ emit: 'event', level: 'query' }],
+      },
     });
     await fastifyWithLogs.ready();
 
@@ -50,8 +50,8 @@ describe('plugin', () => {
 
     const ducks = await fastifyWithLogs.prisma.rubberDucky.findMany({
       where: {
-        name: 'Bob'
-      }
+        name: 'Bob',
+      },
     });
 
     expect(ducks.length).toBe(1);
@@ -62,14 +62,14 @@ describe('plugin', () => {
     const fastifyWithClient = Fastify();
     const myClient = new PrismaClient();
     await fastifyWithClient.register(prismaPlugin, {
-      client: myClient
+      client: myClient,
     });
     await fastifyWithClient.ready();
 
     const ducks = await fastifyWithClient.prisma.rubberDucky.findMany({
       where: {
-        name: 'Bob'
-      }
+        name: 'Bob',
+      },
     });
 
     expect(fastifyWithClient.prisma).toBe(myClient);
