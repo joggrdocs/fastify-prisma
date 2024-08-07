@@ -14,7 +14,5 @@ If you want to run the basic example and see the plugin in action follow the ste
 ### Steps
 
 1. Clone the repo locally `git clone git@github.com:joggrdocs/fastify-prisma.git`
-2. Start the database `docker-compose up -d`
-3. Install dependencies `npm i`
-4. Run migrations `npm run prisma migrate deploy`
-5. Run the server `npm start`
+2. Run `npm start` in the root of the project
+3. Navigate to `http://localhost:3000/rubber-duckies` in your browser 

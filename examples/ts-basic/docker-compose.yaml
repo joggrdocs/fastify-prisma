@@ -4,7 +4,7 @@ services:
     image: postgres:10.3
     restart: always
     ports:
-      - '5432:5432'
+      - '2345:5432'
     environment:
       POSTGRES_USER: prisma
       POSTGRES_PASSWORD: prisma
