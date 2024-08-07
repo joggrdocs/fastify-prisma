@@ -1,42 +1,40 @@
 name-template: 'v$RESOLVED_VERSION'
 tag-template: 'v$RESOLVED_VERSION'
 categories:
-  - title: ':bangbang: Breaking Changes'
+  - title: ':bangbang: Breaking Changes :bangbang:'
     labels:
-      - 'major'
-  - title: '🚀 Features'
+      - 'semver: major'
+  - title: '🦄 Enhancements'
     labels:
-      - 'enhancement'
+      - 'type: enhancement'
   - title: '🔥 Hotfixes'
     labels:
-      - 'hotfix'
+      - 'type: hotfix'
   - title: '🐛 Bugfixes'
     labels:
-      - 'bugfix'
-  - title: '🧰 Chores'
+      - 'type: bugfix'
+  - title: '🧰 Chore'
     labels:
-      - 'maintenance'
-      - 'chore'
-      - 'maintain'
-  - title: '🛡️ Security'
-    labels: 
-      - 'security'
+      - 'type: chore'
+  - title: '👮 Security'
+    labels:
+      - 'type: security'
   - title: '📦 Dependencies'
     labels:
-      - 'dependencies'
+      - 'type: dependencies'
 change-template: '- $TITLE @$AUTHOR (#$NUMBER)'
 exclude-labels:
-  - 'skip-changelog'
+  - 'semver: skip'
 version-resolver:
   major:
     labels:
-      - 'major'
+      - 'semver: major'
   minor:
     labels:
-      - 'minor'
+      - 'semver: minor'
   patch:
     labels:
-      - 'patch'
+      - 'semver: patch'
   default: minor
 template: |
   ## Changes

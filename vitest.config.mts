@@ -1,5 +1,5 @@
-import { defineConfig } from 'vitest/config';
 import tsconfigPaths from 'vite-tsconfig-paths';
+import { defineConfig } from 'vitest/config';
 
 export default defineConfig({
   test: {
@@ -8,9 +8,9 @@ export default defineConfig({
     coverage: {
       provider: 'istanbul',
       reporter: ['text', 'json', 'json-summary', 'html'],
-      all: true
+      all: true,
     },
-    testTimeout: 15000
+    testTimeout: 15000,
   },
-  plugins: [tsconfigPaths()]
+  plugins: [tsconfigPaths()],
 });

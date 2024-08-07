@@ -1,8 +1,8 @@
 # fastify-prisma
 
-![CI](https://github.com/joggrdocs/fastify-prisma/workflows/CI/badge.svg)
 [![npm version](https://img.shields.io/npm/v/%40joggr/fastify-prisma)](https://www.npmjs.com/package/@joggr/fastify-prisma)
-[![js-semistandard-style](https://img.shields.io/badge/code%20style-semistandard-brightgreen.svg)](https://github.com/standard/semistandard)
+![CI](https://github.com/joggrdocs/fastify-prisma/workflows/CI/badge.svg)
+[![Formatted with Biome](https://img.shields.io/badge/Formatted_with-Biome-60a5fa?style=flat&logo=biome)](https://biomejs.dev/)
 
 Fastify Prisma plugin to share the same `PrismaClient` across your entire server.
 
@@ -104,8 +104,8 @@ Licensed under MIT.
     We'd love to have you join, but we are in closed beta. <br> You can join our waitlist below.
 </p>
 <p align="center">
-    <a href="https://www.joggr.io/closed-beta-waitlist?utm_source=github&utm_medium=org-readme&utm_campaign=static-docs" alt="Join the Waitlist">
-        <img src="https://storage.googleapis.com/joggr-public-assets/github/badges/join-waitlist-badge.svg" width="250px" />
-    </a>
+  <a href="https://www.joggr.io/waitlist?utm_source=github&utm_medium=org-readme&utm_campaign=static-docs">
+    <img src="https://cdn.joggr.io/assets/static/badges/joggr-waitlist.svg" width="250px" alt="Join the Waitlist" />
+  </a>
 </p>
 
