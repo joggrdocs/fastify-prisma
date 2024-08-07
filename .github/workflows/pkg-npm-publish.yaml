@@ -42,6 +42,10 @@ jobs:
         with:
           # We don't want to publish the release notes, just get the version
           publish: false
+      
+      - name: '🔼 Increment Version'
+        run: yarn version ${{ inputs.version != 'calculate' && inputs.version || steps.calculate-version.outputs.resolved_version }}
+
 
       - name: '#️⃣ Get Version'
         uses: actions/github-script@v7
@@ -57,9 +61,6 @@ jobs:
             const fs = require('fs');
             const pj = JSON.parse(fs.readFileSync('${{ github.workspace }}/package.json'));
             return pj.version;
-      
-      - name: '🔼 Increment Version'
-        run: yarn version ${{ inputs.version }}
 
       - name: '💾 Commit Incremented Version'
         run: |
