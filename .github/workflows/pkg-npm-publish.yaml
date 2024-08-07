@@ -84,7 +84,7 @@ jobs:
       - name: '🏗️ Build'
         run: yarn build
 
-      - name: Setup .yarnrc.yml
+      - name: '🧶 Setup .yarnrc.yml'
         run: |
           yarn config set npmScopes.joggr.npmRegistryServer "https://registry.npmjs.org"
           yarn config set npmScopes.joggr.npmAlwaysAuth true
