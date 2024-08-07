@@ -12,5 +12,6 @@ export default defineConfig({
     },
     testTimeout: 15000,
   },
-  plugins: [tsconfigPaths()],
+  // biome-ignore lint/suspicious/noExplicitAny: TypeScript bug where type depth exceeded
+  plugins: [tsconfigPaths() as any],
 });

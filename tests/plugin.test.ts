@@ -4,7 +4,8 @@ import Fastify from 'fastify';
 import prismaPlugin from '../src/index';
 
 describe('plugin', () => {
-  let fastify;
+  // biome-ignore lint/suspicious/noExplicitAny: Only for testing purposes
+  let fastify: any;
 
   beforeEach(() => {
     fastify = Fastify();
@@ -44,6 +45,7 @@ describe('plugin', () => {
     await fastifyWithLogs.ready();
 
     // @todo Assess how to fix this or provide documentation (or both)
+    // @ts-expect-error - this is a test and types SHOULD work here...but?
     fastifyWithLogs.prisma.$on('query', () => {
       quacks.push('quack');
     });
