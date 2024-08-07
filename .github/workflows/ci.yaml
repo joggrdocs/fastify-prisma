@@ -28,7 +28,7 @@ jobs:
         run: yarn --immutable --immutable-cache --check-cache
         
       - name: '🎨 Code Formatting & Linting'
-        run: yarn analyze
+        run: yarn analyze:ci
         
       - name: '🟦 Typecheck'
         run: yarn analyze:types
