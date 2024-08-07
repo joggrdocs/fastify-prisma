@@ -5,9 +5,10 @@ export const routes: FastifyPluginCallback = (server, options, done) => {
     const ducks = await server.prisma.rubberDucky.findMany();
 
     if (!ducks || ducks.length === 0) {
-      reply.status(404).send({ message: '🐥 Quackerz!' });
+      reply.status(404);
+      return { message: '🦆 No rubber duckies found, just this real duck.' };
     } else {
-      reply.send({ ducks, message: '🐥 Quack!' });
+      return { ducks, message: '🐥 Quack! We found our Rubber Duckies!' };
     }
   });
 
