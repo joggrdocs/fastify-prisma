@@ -5,13 +5,13 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "ts-node src/server.ts"
+    "start": "./start.sh",
+    "serve": "ts-node src/server.ts",
+    "prisma:seed": "ts-node prisma/seed.ts",
+    "prisma:deploy": "prisma migrate deploy"
   },
   "author": "Joggr Engineering <engineering@joggr.io>",
   "license": "MIT",
-  "prisma": {
-    "seed": "ts-node prisma/seed.ts"
-  },
   "dependencies": {
     "@joggr/fastify-prisma": "latest",
     "@prisma/client": "^5.3.1",
