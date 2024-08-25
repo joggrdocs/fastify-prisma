@@ -2,25 +2,18 @@
   "name": "@joggr/fastify-prisma",
   "version": "2.2.2",
   "description": "Fastify Prisma plugin connection to share the same connection across your entire server.",
-  "exports": {
-    ".": {
-      "import": "./dist/index.mjs",
-      "require": "./dist/index.js",
-      "types": "./dist/index.d.ts"
-    }
-  },
-  "module": "./dist/index.mjs",
   "main": "./dist/index.js",
+  "type": "commonjs",
   "types": "./dist/index.d.ts",
   "files": [
     "README.md",
     "package.json",
-    "LICENSE",
     "dist/**/*"
   ],
   "scripts": {
-    "build": "vite build",
-    "test": "vitest",
+    "prebuild": "yarn clean:dist",
+    "build": "yarn prebuild && swc ./src -d ./dist --strip-leading-paths && yarn postbuild",
+    "postbuild": "yarn types",
     "clean": "yarn clean:dist && yarn clean:cache",
     "clean:cache": "rimraf --glob \"**/node_modules\"",
     "clean:dist": "rimraf --glob \"./dist\"",
@@ -30,7 +23,9 @@
     "analyze:types": "tsc --noEmit",
     "fix:fmt": "biome format --fix",
     "fix:lint": "biome lint --fix",
-    "fix": "yarn biome check --fix"
+    "fix": "yarn biome check --fix",
+    "types": "tsc --emitDeclarationOnly --outDir ./dist",
+    "test": "vitest"
   },
   "repository": {
     "type": "git",
@@ -51,14 +46,12 @@
   "devDependencies": {
     "@biomejs/biome": "^1.8.3",
     "@prisma/client": "^5.18.0",
-    "@types/jest": "^29.5.12",
+    "@swc/cli": "^0.4.0",
+    "@swc/core": "^1.7.18",
     "fastify": "^4.28.1",
     "husky": "^9.1.4",
-    "jest": "^29.7.0",
     "rimraf": "^6.0.1",
     "typescript": "^5.5.4",
-    "vite": "^5.3.5",
-    "vite-plugin-dts": "^4.0.0",
     "vite-tsconfig-paths": "^5.0.1",
     "vitest": "^2.0.5"
   },

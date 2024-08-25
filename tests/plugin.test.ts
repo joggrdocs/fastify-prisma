@@ -1,5 +1,6 @@
 import { PrismaClient } from '@prisma/client';
 import Fastify from 'fastify';
+import { afterEach, beforeEach, describe, expect, it } from 'vitest';
 
 import prismaPlugin from '../src/index';
 
