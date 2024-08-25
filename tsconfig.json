@@ -1,12 +1,11 @@
 {
-  "ts-node": {
-    "files": true
-  },
+  "$schema": "https://json.schemastore.org/tsconfig",
   "compilerOptions": {
     "incremental": true,
+    "moduleResolution": "node",
+    "target": "ES2023",
     "module": "commonjs",
     "strict": true,
-    "target": "ES2022",
     "strictNullChecks": true,
     "noImplicitAny": true,
     "esModuleInterop": true,
@@ -14,22 +13,18 @@
     "emitDecoratorMetadata": true,
     "skipLibCheck": true,
     "experimentalDecorators": true,
-    "moduleResolution": "node",
     "sourceMap": true,
     "declaration": true,
-    "lib": ["ES2022"],
+    "lib": ["ES2023"],
+    "typeRoots": ["node_modules/@types"],
     "outDir": "./dist",
     "baseUrl": "."
   },
-  "typeRoots": ["node_modules/@types", "types"],
-  "include": ["types/**/*", "src/**/*"],
+  "include": ["src/**/*"],
   "exclude": [
     "node_modules/**/*",
     "**/__tests__/**/*",
     "tests",
-    "action.js",
-    "eslint.config.js",
-    "vite.config.mts",
     "vitest.config.mts"
   ]
 }
