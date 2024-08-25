@@ -25,6 +25,9 @@ categories:
 change-template: '- $TITLE @$AUTHOR (#$NUMBER)'
 exclude-labels:
   - 'semver: skip'
+replacers:
+  - search: '/GH-(\d+)/g'
+    replace: 'https://github.com/joggrdocs/fastify-prisma/issues/$1'
 version-resolver:
   major:
     labels:
