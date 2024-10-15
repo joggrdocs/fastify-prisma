@@ -46,7 +46,6 @@ jobs:
       - name: '🔼 Increment Version'
         run: yarn version ${{ inputs.version != 'calculate' && inputs.version || steps.calculate-version.outputs.resolved_version }}
 
-
       - name: '#️⃣ Get Version'
         uses: actions/github-script@v7
         id: version
