@@ -61,5 +61,5 @@
   "peerDependencies": {
     "@prisma/client": "4.x || 5.x"
   },
-  "packageManager": "yarn@4.2.1"
+  "packageManager": "yarn@4.5.0"
 }
