@@ -312,7 +312,7 @@ __metadata:
   resolution: "@joggr/fastify-prisma@workspace:."
   dependencies:
     "@biomejs/biome": "npm:^1.9.4"
-    "@prisma/client": "npm:^5.22.0"
+    "@prisma/client": "npm:^6.0.1"
     "@swc/cli": "npm:^0.5.2"
     "@swc/core": "npm:^1.10.1"
     fastify: "npm:^5.1.0"
@@ -560,15 +560,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@prisma/client@npm:^5.22.0":
-  version: 5.22.0
-  resolution: "@prisma/client@npm:5.22.0"
+"@prisma/client@npm:^6.0.1":
+  version: 6.0.1
+  resolution: "@prisma/client@npm:6.0.1"
   peerDependencies:
     prisma: "*"
   peerDependenciesMeta:
     prisma:
       optional: true
-  checksum: 10/991d7410ded2d6c824303ac222ae94df4f1bf42240dda97c710cfee3a3bc59fef65c73e1ee55177e38d12f4d7dfc0a047748f98b4e3026dddd65f462684cd2d1
+  checksum: 10/de537c1ef3de528b2dfa93d661d16ff47a14e688dc0e26bc97d0cf3775e7049325cd36120308e0a85bea5188cbc4be9966e9ca9df3c4508e689830082e2f3a64
   languageName: node
   linkType: hard
 
