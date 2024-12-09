@@ -1,7 +1,7 @@
 import fastifyPrisma from '@joggr/fastify-prisma';
 import Fastify from 'fastify';
 
-import rubberDuckies from './routes/rubber-duckies';
+import rubberDuckies from './routes/rubber-duckies.js';
 
 const fastify = Fastify({
   logger: true,

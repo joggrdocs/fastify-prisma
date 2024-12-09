@@ -6,18 +6,19 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "./start.sh",
-    "serve": "ts-node -r dotenv/config ./src/server.ts",
-    "prisma:seed": "ts-node prisma/seed.ts",
+    "stop": "docker compose down",
+    "serve": "tsx --env-file=.env ./src/server.ts",
+    "prisma:seed": "tsx --env-file=.env prisma/seed.ts",
     "prisma:deploy": "prisma migrate deploy"
   },
   "author": "Joggr Engineering <engineering@joggr.io>",
   "license": "MIT",
   "dependencies": {
-    "@joggr/fastify-prisma": "../../",
-    "@prisma/client": "^5.3.1",
+    "@joggr/fastify-prisma": "file:../../package.tgz",
+    "@prisma/client": "^6.0.1",
     "dotenv": "^16.4.5",
     "fastify": "^5.0.0",
-    "prisma": "^5.3.1",
+    "prisma": "^6.0.1",
     "ts-node": "^10.9.1"
   }
 }
