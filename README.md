@@ -91,6 +91,18 @@ async function somePlugin (server, opts) {
 
 ```
 
+## Version Compatibility
+
+Different versions of this library support different versions of `fastify` and `@prisma/client`. Please use the version you need based on your project's dependencies.
+
+The table below shows the compatibility matrix.
+
+| `@joggrdocs/fastify-prisma` | `fastify` | `@prisma/client` | status |
+| -------------- | ------- | ------ | ------ |
+|`5.x`          | `5.x`   | `6.x`        | `active` |
+| `4.x`         | `5.x`   | `5.x`        | `active` |
+| `1.x` - `3.x` | `4.x`   | `4.x \|\| 5.x` |`deprecated` |
+
 ## License
 
 Licensed under MIT.
