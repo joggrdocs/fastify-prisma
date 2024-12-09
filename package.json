@@ -27,14 +27,10 @@
     "clean": "yarn clean:dist && yarn clean:cache",
     "clean:cache": "rimraf --glob \"**/node_modules\"",
     "clean:dist": "rimraf --glob \"./dist\"",
-    "analyze:fmt": "biome format",
+    "analyze:fmt": "biome check",
     "analyze:ci": "biome ci --diagnostic-level=error",
-    "analyze:lint": "biome lint",
     "analyze:types": "tsc --noEmit",
-    "fix:fmt": "biome format --fix",
-    "fix:lint": "biome lint --fix",
-    "fix": "yarn biome check --fix",
-    "types": "tsc --emitDeclarationOnly --outDir ./dist",
+    "fix": "biome check --fix",
     "test": "vitest"
   },
   "repository": {
