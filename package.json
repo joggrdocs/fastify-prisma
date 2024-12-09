@@ -35,6 +35,8 @@
   },
   "repository": {
     "type": "git",
+
+    
     "url": "git+https://github.com/joggrdocs/fastify-prisma.git"
   },
   "keywords": [
