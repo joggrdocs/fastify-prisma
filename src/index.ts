@@ -1,4 +1,4 @@
-import { PrismaClient } from '@prisma/client';
+import { type Prisma, PrismaClient } from '@prisma/client';
 import type { FastifyInstance, FastifyPluginAsync } from 'fastify';
 import fp from 'fastify-plugin';
 
@@ -20,10 +20,8 @@ declare module 'fastify' {
 type FastifyPrisma = FastifyPluginAsync<fastifyPrisma.FastifyPrismaOptions>;
 
 declare namespace fastifyPrisma {
-  type PrismaClientConfig = Omit<
-    ConstructorParameters<typeof PrismaClient>[0],
-    '__internal'
-  >;
+  // @ts-expect-error - Ignore this error, as we are re-exporting the Prisma types that are peer dependencies
+  type PrismaClientConfig = Prisma.PrismaClientOptions;
 
   interface FastifyPrismaOptionsWithClient {
     /**

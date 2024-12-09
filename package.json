@@ -2,9 +2,20 @@
   "name": "@joggr/fastify-prisma",
   "version": "4.1.0",
   "description": "Fastify Prisma plugin connection to share the same connection across your entire server.",
-  "main": "./dist/index.js",
-  "type": "commonjs",
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
+  "exports": {
+    "require": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.cjs"
+    },
+    "import": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.mjs"
+    }
+  },
   "files": [
     "README.md",
     "package.json",
@@ -12,8 +23,7 @@
   ],
   "scripts": {
     "prebuild": "yarn clean:dist",
-    "build": "yarn prebuild && swc ./src -d ./dist --strip-leading-paths && yarn postbuild",
-    "postbuild": "yarn types",
+    "build": "yarn prebuild && pkgroll",
     "clean": "yarn clean:dist && yarn clean:cache",
     "clean:cache": "rimraf --glob \"**/node_modules\"",
     "clean:dist": "rimraf --glob \"./dist\"",
@@ -46,10 +56,10 @@
   "devDependencies": {
     "@biomejs/biome": "^1.9.4",
     "@prisma/client": "^6.0.1",
-    "@swc/cli": "^0.5.2",
-    "@swc/core": "^1.10.1",
+    "@tsconfig/recommended": "^1.0.8",
     "fastify": "^5.1.0",
     "husky": "^9.1.7",
+    "pkgroll": "^2.5.1",
     "rimraf": "^6.0.1",
     "typescript": "^5.7.2",
     "vite-tsconfig-paths": "^5.1.4",
