@@ -83,7 +83,7 @@ const plugin = async (
  * });
  * ```
  */
-export = fp(plugin, {
+export default fp(plugin, {
   name: '@joggr/fastify-prisma',
   fastify: '5.x',
 });

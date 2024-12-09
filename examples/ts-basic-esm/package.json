@@ -15,7 +15,7 @@
   "author": "Joggr Engineering <engineering@joggr.io>",
   "license": "MIT",
   "dependencies": {
-    "@joggr/fastify-prisma": "../../",
+    "@joggr/fastify-prisma": "file:../../package.tgz",
     "@prisma/client": "^6.0.1",
     "dotenv": "^16.4.5",
     "fastify": "^5.0.0",
