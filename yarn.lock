@@ -1528,8 +1528,8 @@ __metadata:
   linkType: hard
 
 "fastify@npm:^5.1.0":
-  version: 5.1.0
-  resolution: "fastify@npm:5.1.0"
+  version: 5.2.0
+  resolution: "fastify@npm:5.2.0"
   dependencies:
     "@fastify/ajv-compiler": "npm:^4.0.0"
     "@fastify/error": "npm:^4.0.0"
@@ -1543,10 +1543,10 @@ __metadata:
     process-warning: "npm:^4.0.0"
     proxy-addr: "npm:^2.0.7"
     rfdc: "npm:^1.3.1"
-    secure-json-parse: "npm:^2.7.0"
+    secure-json-parse: "npm:^3.0.1"
     semver: "npm:^7.6.0"
     toad-cache: "npm:^3.7.0"
-  checksum: 10/32ad1a2fcb1206f42ef8f600f59c11b6bba8b41c9c4b97dda895ecfd265f0127c0b9019335923b0208db73ca835ef996af65e6a62fe106a274f8e3973dcfd65d
+  checksum: 10/70fabc3d08797f266dc5befc506b5bf2aa2d07ca3f1449e768df07d8ea34df0dd6a10720ccc1422525679f9b807fc91b0ec2083c2f6fc3ee464ee75b11afcbd4
   languageName: node
   linkType: hard
 
@@ -2604,10 +2604,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"secure-json-parse@npm:^2.7.0":
-  version: 2.7.0
-  resolution: "secure-json-parse@npm:2.7.0"
-  checksum: 10/974386587060b6fc5b1ac06481b2f9dbbb0d63c860cc73dc7533f27835fdb67b0ef08762dbfef25625c15bc0a0c366899e00076cb0d556af06b71e22f1dede4c
+"secure-json-parse@npm:^3.0.1":
+  version: 3.0.1
+  resolution: "secure-json-parse@npm:3.0.1"
+  checksum: 10/52f2d9820f83c970e7f2caf0b271d761741363d9941ee8c77c65105ae4f89edccd9778ce4868895e1778b5c1bcc6b012380c3df37577364cab9921223ae44100
   languageName: node
   linkType: hard
 
