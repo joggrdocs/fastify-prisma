@@ -533,14 +533,14 @@ __metadata:
   linkType: hard
 
 "@prisma/client@npm:^6.0.1":
-  version: 6.0.1
-  resolution: "@prisma/client@npm:6.0.1"
+  version: 6.1.0
+  resolution: "@prisma/client@npm:6.1.0"
   peerDependencies:
     prisma: "*"
   peerDependenciesMeta:
     prisma:
       optional: true
-  checksum: 10/de537c1ef3de528b2dfa93d661d16ff47a14e688dc0e26bc97d0cf3775e7049325cd36120308e0a85bea5188cbc4be9966e9ca9df3c4508e689830082e2f3a64
+  checksum: 10/7223bde75832fe8f2402040e4b1f88bd552c606688e7c31f9620de85af5491a6fdbd30008f3396e036de95ea251696c0a3427e79ab69116a10efa3682c0fc0b6
   languageName: node
   linkType: hard
 
