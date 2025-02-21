@@ -107,17 +107,19 @@ The table below shows the compatibility matrix.
 
 Licensed under MIT.
 
+<!-- Signup footer -->
 <br>
 <hr>
 <h2 align="center">
-    Want to sign up for Joggr?
+   ⚡️ Want to sign up for Joggr?
 </h2>
 <p align="center">
-    We'd love to have you join, but we are in closed beta. <br> You can join our waitlist below.
+    You can sign up for free at our website:  <a href="https://www.joggr.io/signup?utm_source=github&utm_medium=org-readme&utm_campaign=static-docs">https://joggr.io</a><br>
+    (or click button below 👇)
 </p>
 <p align="center">
-  <a href="https://www.joggr.io/waitlist?utm_source=github&utm_medium=org-readme&utm_campaign=static-docs">
-    <img src="https://cdn.joggr.io/assets/static/badges/joggr-waitlist.svg" width="250px" alt="Join the Waitlist" />
+  <a href="https://www.joggr.io/signup?utm_source=github&utm_medium=org-readme&utm_campaign=static-docs">
+    <img src="https://assets.joggr.io/github/badges/signup-badge.svg" width="250px" alt="Sign up" />
   </a>
 </p>
-
+<br>
