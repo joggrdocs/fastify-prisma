@@ -14,6 +14,8 @@ jobs:
   update_draft_release:
     runs-on: ubuntu-latest
     steps:
-      - uses: toolmantim/release-drafter@v6
+      - uses: release-drafter/release-drafter@v6
+        with:
+          config-name: release-drafter.yaml
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
