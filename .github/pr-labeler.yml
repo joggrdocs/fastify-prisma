@@ -1,6 +1,0 @@
-'type: dependencies': ['upgrades/*', 'upgrade/*', 'dependencies/*', 'deps/*']
-'type: enhancement': ['feature/*', 'feat/*', 'enhance/*', 'enhancement/*']
-'type: bugfix': ['bugfix/*']
-'type: hotfix': ['hotfix/*']
-'type: chore': ['chore/*', 'maintenance/*', 'maintain/*']
-'type: security': ['security/*']
