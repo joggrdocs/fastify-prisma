@@ -1,42 +1,51 @@
 name: 'ci: Code Standards & Testing'
 
 on:
-  pull_request:
-    branches:
-      - main
+  pull_request: {}
   push:
     branches:
       - main
 
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
-  lintAndTest:
-    name: Lint & Test
+  ci:
     runs-on: ubuntu-latest
+    name: Continuous Integration Suite
     permissions:
       contents: read
       pull-requests: write
     steps:
       - name: '⬇️ Checkout Code'
         uses: actions/checkout@v4
-
       - name: '💚 Use Node.js v20'
         uses: actions/setup-node@v4
         with:
           node-version: 20
-
       - name: '📦 Install Packages'
         run: yarn --immutable --immutable-cache --check-cache
-        
       - name: '🎨 Code Formatting & Linting'
         run: yarn analyze:ci
-        
       - name: '🟦 Typecheck'
         run: yarn analyze:types
-
       - name: '▲ Generate Prisma Client for Tests'
         working-directory: tests 
         run: yarn dlx prisma generate
-
       - name: '⚡️ Test'
         id: test
         run: yarn test
+
+  dependabot:
+    name: 'Dependabot (auto-merge)'
+    needs: [ci]
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    if: ${{ github.actor == 'dependabot[bot]' && github.event_name == 'pull_request'}}
+    steps:
+      - name: Enable auto-merge for Dependabot PRs
+        run: gh pr merge --auto --squash "$PR_URL" 
+        env:
+          PR_URL: ${{github.event.pull_request.html_url}}
+          GITHUB_TOKEN: ${{ secrets.GH_BOT_TOKEN }}

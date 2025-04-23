@@ -4,6 +4,16 @@ updates:
     directory: '/'
     schedule:
       interval: 'weekly'
+    labels:
+      - "type: dependencies"
+    groups:
+      ## Fastify
+      # @see https://github.com/fastify
+      fastify:
+        patterns:
+          - 'fastify*'
+          - '@fastify*'
+          - '*fastify*'
   - package-ecosystem: 'github-actions'
     directory: '/'
     schedule:

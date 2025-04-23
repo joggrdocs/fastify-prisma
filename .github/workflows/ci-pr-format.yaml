@@ -1,0 +1,36 @@
+name: 'ci: PR Format'
+
+on:
+  pull_request:
+
+concurrency:
+  group: ci-pr-format-${{ github.ref }}
+  cancel-in-progress: true
+  
+jobs:
+  format:
+    runs-on: ubuntu-latest
+    name: Formatting
+    timeout-minutes: 5
+    steps:
+      - name: '🏷️ Validate Labels: Semver'
+        uses: mheap/github-action-required-labels@v5
+        with:
+          mode: exactly
+          count: 1
+          labels: "semver:.*"
+          use_regex: true
+      - name: '🏷️ Validate Labels: Type'
+        uses: mheap/github-action-required-labels@v5
+        with:
+          mode: exactly
+          count: 1
+          labels: "type:.*"
+          use_regex: true
+      - name: '🏷️ Validate Labels: Blocked'
+        uses: mheap/github-action-required-labels@v5
+        with:
+          mode: exactly
+          count: 0
+          labels: "blocked"
+          use_regex: true
