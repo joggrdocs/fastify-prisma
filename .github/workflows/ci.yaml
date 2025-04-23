@@ -12,33 +12,27 @@ concurrency:
 
 jobs:
   ci:
-    name: Lint & Test
     runs-on: ubuntu-latest
+    name: Continuous Integration Suite
     permissions:
       contents: read
       pull-requests: write
     steps:
       - name: '⬇️ Checkout Code'
         uses: actions/checkout@v4
-
       - name: '💚 Use Node.js v20'
         uses: actions/setup-node@v4
         with:
           node-version: 20
-
       - name: '📦 Install Packages'
         run: yarn --immutable --immutable-cache --check-cache
-        
       - name: '🎨 Code Formatting & Linting'
         run: yarn analyze:ci
-        
       - name: '🟦 Typecheck'
         run: yarn analyze:types
-
       - name: '▲ Generate Prisma Client for Tests'
         working-directory: tests 
         run: yarn dlx prisma generate
-
       - name: '⚡️ Test'
         id: test
         run: yarn test
