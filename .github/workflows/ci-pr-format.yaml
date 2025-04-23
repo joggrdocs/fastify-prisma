@@ -2,6 +2,7 @@ name: 'ci: PR Format'
 
 on:
   pull_request:
+    types: [opened, synchronize, reopened, labeled, unlabeled]
 
 concurrency:
   group: ci-pr-format-${{ github.ref }}
