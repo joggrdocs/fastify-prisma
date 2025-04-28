@@ -2473,8 +2473,8 @@ __metadata:
   linkType: hard
 
 "pkgroll@npm:^2.11.2":
-  version: 2.12.1
-  resolution: "pkgroll@npm:2.12.1"
+  version: 2.12.2
+  resolution: "pkgroll@npm:2.12.2"
   dependencies:
     "@rollup/plugin-alias": "npm:^5.1.1"
     "@rollup/plugin-commonjs": "npm:^28.0.2"
@@ -2494,7 +2494,7 @@ __metadata:
       optional: true
   bin:
     pkgroll: dist/cli.mjs
-  checksum: 10/4e5eaeba3ff17994c0a9fbd680b9fb15d7b2346a6b3d64d84949dc18b3da78723cd78748a635a12e0ccf25dc00fbe055ad73b05f5cc4989d50d080a7fd21d8c6
+  checksum: 10/966708e78d51e5346724da082fc13f426a06b3b3986fd01f703aff35dba99806cd5a0286873426a2fd2632e51774af357b235b1d9bf187e1bb4914056d08fb3f
   languageName: node
   linkType: hard
 
