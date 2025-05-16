@@ -41,15 +41,7 @@ pnpm add @joggr/fastify-prisma
 
 ### Register the plugin
 
-You have two options for registering the plugin:
-
-1. Use the plugin as-is or pass in your own configs
-2. Create a separate client and pass it in (great if you are using a monorepo or other more unique use cases)
-
 ### `javascript`
-
-If you are not using typescript just import the client from where ever you have it defined as 
-the output in `prisma.schema`.
 
 ```javascript
 const { PrismaClient } = require('../my-prisma-client');
@@ -79,6 +71,9 @@ await fastify.register(fastifyPrisma, {
   client: new PrismaClient(),
 });
 ```
+
+>[!WARN]
+> Make sure you add in the module declaration or you won't have types!
 
 ### Accessing the `prisma` client
 
