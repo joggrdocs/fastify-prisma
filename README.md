@@ -44,8 +44,8 @@ pnpm add @joggr/fastify-prisma
 ### `javascript`
 
 ```javascript
-const { PrismaClient } = require('../my-prisma-client');
 const fastifyPrisma = require('@joggr/fastify-prisma');
+const { PrismaClient } = require('../my-prisma-client');
 
 await fastify.register(fastifyPrisma, {
   client: new PrismaClient(),
@@ -57,8 +57,8 @@ await fastify.register(fastifyPrisma, {
 #### Setup
 
 ```typescript
-import { PrismaClient } from '../my-prisma-client';
 import fastifyPrisma from '@joggr/fastify-prisma';
+import { PrismaClient } from '../my-prisma-client';
 
 // Add this so you get types across the board
 declare module 'fastify' {
