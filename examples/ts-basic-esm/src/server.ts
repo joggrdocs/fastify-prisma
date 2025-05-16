@@ -1,7 +1,13 @@
 import fastifyPrisma from '@joggr/fastify-prisma';
 import Fastify from 'fastify';
+import rubberDuckies from '#/routes/rubber-duckies.js';
+import { PrismaClient } from '#prisma/client';
 
-import rubberDuckies from './routes/rubber-duckies.js';
+declare module 'fastify' {
+  interface FastifyInstance {
+    prisma: PrismaClient;
+  }
+}
 
 const fastify = Fastify({
   logger: true,
@@ -9,10 +15,12 @@ const fastify = Fastify({
 
 const start = async () => {
   try {
-    // Register the Prisma plugin
-    await fastify.register(fastifyPrisma);
+    // Register the Prisma plugin using a custom Prisma client instance
+    // that's output is not the legacy node_modules output
+    await fastify.register(fastifyPrisma, {
+      client: new PrismaClient(),
+    });
 
-    // Register the routes
     fastify.register(rubberDuckies);
 
     await fastify.listen({ port: 3000 });

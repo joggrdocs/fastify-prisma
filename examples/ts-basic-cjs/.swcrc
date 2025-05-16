@@ -1,0 +1,23 @@
+{
+  "$schema": "https://swc.rs/schema.json",
+  "module": {
+    "type": "commonjs",
+    "noInterop": false,
+    "strict": true,
+    "resolveFully": true
+  },
+  "sourceMaps": true,
+  "jsc": {
+    "target": "es2023",
+    "parser": {
+      "syntax": "typescript",
+      "dynamicImport": true,
+      "importMeta": true
+    },
+    "baseUrl": ".",
+    "paths": {
+      "#/*": ["src/*"],
+      "@prisma/client": ["./prisma/client"]
+    }
+  }
+}

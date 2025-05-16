@@ -1,8 +1,8 @@
 import type { FastifyPluginCallback } from 'fastify';
 
-export const routes: FastifyPluginCallback = (server, options, done) => {
-  server.get('/rubber-duckies', async (request, reply) => {
-    const ducks = await server.prisma.rubberDucky.findMany();
+export const routes: FastifyPluginCallback = (fastify, _options, done) => {
+  fastify.get('/rubber-duckies', async (_request, reply) => {
+    const ducks = await fastify.prisma.rubberDucky.findMany();
 
     if (!ducks || ducks.length === 0) {
       reply.status(404);
