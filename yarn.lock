@@ -352,7 +352,7 @@ __metadata:
   resolution: "@joggr/fastify-prisma@workspace:."
   dependencies:
     "@biomejs/biome": "npm:^1.9.4"
-    "@prisma/client": "npm:6.8.2"
+    "@prisma/client": "npm:^6.8.2"
     "@tsconfig/recommended": "npm:^1.0.8"
     fastify: "npm:^5.3.3"
     fastify-plugin: "npm:^5.0.1"
@@ -432,7 +432,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@prisma/client@npm:6.8.2":
+"@prisma/client@npm:^6.8.2":
   version: 6.8.2
   resolution: "@prisma/client@npm:6.8.2"
   peerDependencies:

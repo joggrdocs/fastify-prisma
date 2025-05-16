@@ -51,6 +51,7 @@
   "homepage": "https://github.com/joggrdocs/fastify-prisma#readme",
   "devDependencies": {
     "@biomejs/biome": "^1.9.4",
+    "@prisma/client": "^6.8.2",
     "@tsconfig/recommended": "^1.0.8",
     "fastify": "^5.3.3",
     "husky": "^9.1.7",
