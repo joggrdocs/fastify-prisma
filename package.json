@@ -26,12 +26,12 @@
     "clean": "yarn clean:dist && yarn clean:cache",
     "clean:cache": "rimraf --glob \"**/node_modules\"",
     "clean:dist": "rimraf --glob \"./dist\"",
-    "prisma:generate": "prisma generate",
+    "prisma:generate": "prisma generate --schema ./tests/",
     "analyze:fmt": "biome check",
     "analyze:ci": "biome ci --diagnostic-level=error",
     "analyze:types": "tsc --noEmit",
     "fix": "biome check --fix",
-    "test": "prisma generate --schema ./tests/ && vitest"
+    "test": "vitest"
   },
   "repository": {
     "type": "git",
