@@ -1,25 +1,28 @@
 {
-  "name": "fastify-prisma-example-basic",
-  "version": "1.0.0",
-  "description": "A basic example using the fastify-prisma plugin",
+  "name": "fastify-prisma-example-basic-esm",
+  "description": "A basic example using the fastify-prisma plugin as an ESM module",
   "type": "module",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "./start.sh",
-    "stop": "docker compose down",
-    "serve": "tsx --env-file=.env ./src/server.ts",
+    "build": "swc ./src -d ./dist --strip-leading-paths --delete-dir-on-start --copy-files",
+    "serve": "node ./index.js",
+    "db:start": "./start.sh",
+    "db:stop": "docker compose down",
     "prisma:seed": "tsx --env-file=.env prisma/seed.ts",
-    "prisma:deploy": "prisma migrate deploy"
+    "prisma:deploy": "prisma migrate deploy",
+    "prisma:generate": "prisma generate"
   },
   "author": "Joggr Engineering <engineering@joggr.io>",
   "license": "MIT",
   "dependencies": {
     "@joggr/fastify-prisma": "file:../../package.tgz",
-    "@prisma/client": "^6.0.1",
-    "dotenv": "^16.4.5",
+    "@swc/cli": "^0.7.7",
+    "@swc/core": "^1.11.24",
+    "dotenv": "^16.5.0",
     "fastify": "^5.3.3",
-    "prisma": "^6.0.1",
-    "tsx": "^4.19.3"
+    "prisma": "^6.8.2",
+    "tsx": "^4.19.4",
+    "@prisma/client": "^6.8.2"
   }
 }

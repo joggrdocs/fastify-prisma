@@ -1,25 +1,17 @@
 {
   "$schema": "https://json.schemastore.org/tsconfig",
   "compilerOptions": {
-    "incremental": true,
-    "moduleResolution": "NodeNext",
-    "module": "NodeNext",
     "target": "ESNext",
-    "strict": true,
-    "strictNullChecks": true,
-    "noImplicitAny": true,
+    "module": "ESNext",
+    "moduleResolution": "Node",
     "esModuleInterop": true,
-    "resolveJsonModule": true,
-    "emitDecoratorMetadata": true,
+    "strict": true,
     "skipLibCheck": true,
-    "experimentalDecorators": true,
-    "sourceMap": true,
-    "declaration": true,
-    "lib": ["ES2023"],
-    "typeRoots": ["node_modules/@types"],
-    "outDir": "./dist",
-    "baseUrl": "."
+    "baseUrl": ".",
+    "paths": {
+      "#/*": ["./src/*"],
+      "#prisma/client": ["./prisma/client"]
+    }
   },
-  "include": ["src/**/*"],
-  "exclude": ["node_modules/**/*", "**/__tests__/**/*"]
+  "include": ["src/**/*", "prisma/**/*"]
 }

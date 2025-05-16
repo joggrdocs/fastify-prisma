@@ -2,7 +2,13 @@
   "$schema": "https://biomejs.dev/schemas/1.8.3/schema.json",
   "files": {
     "maxSize": 10485760,
-    "ignore": ["**/package.json", ".vscode/**/*", ".yarn/**/*"]
+    "ignore": [
+      "**/package.json",
+      ".vscode/**/*",
+      ".yarn/**/*",
+      "node_modules/**/*",
+      "**/prisma/client/**/*"
+    ]
   },
   "formatter": {
     "enabled": true,
