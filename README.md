@@ -69,7 +69,7 @@ await fastify.register(fastifyPrisma, {
 You need to update your `tsconfig.json` to map the `compilerOptions.path` to match the output of the generated `PrismaClient`, by
 proxying the `@prisma/client` "package" to the output you defined in your `prisma.schema`.
 
-```json
+```javascript
 {
   "compilerOptions": {
     ...
@@ -113,6 +113,7 @@ The table below shows the compatibility matrix.
 
 | `@joggrdocs/fastify-prisma` | `fastify` | `@prisma/client`  | status       |
 | ---------------------------- | --------- | ---------------- | ------------ |
+| `6.x`                        | `5.x`     | `6.x`            | `active`     |
 | `5.x`                        | `5.x`     | `6.x`            | `active`     |
 | `4.x`                        | `5.x`     | `5.x`            | `deprecated` |
 | `1.x` - `3.x`                | `4.x`     | `4.x \|\| 5.x`   | `deprecated` |
