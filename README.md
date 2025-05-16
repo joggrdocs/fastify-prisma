@@ -14,6 +14,7 @@ const allTheDucks = await server.prisma.rubberDucky.findMany();
 
 - `fastify` >= 5.x
 - `@prisma/client` >= 6.x
+- `prisma` set up using the `output` config [👉 see docs](https://www.prisma.io/docs/orm/prisma-client/setup-and-configuration/generating-prisma-client)
 
 ## Getting Started
 
@@ -41,7 +42,7 @@ pnpm add @joggr/fastify-prisma
 
 ### Register the plugin
 
-### `javascript`
+#### `javascript`
 
 ```javascript
 const fastifyPrisma = require('@joggr/fastify-prisma');
@@ -52,9 +53,7 @@ await fastify.register(fastifyPrisma, {
 });
 ```
 
-### `typescript`
-
-#### Setup
+#### `typescript`
 
 ```typescript
 import fastifyPrisma from '@joggr/fastify-prisma';
