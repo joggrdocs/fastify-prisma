@@ -64,33 +64,22 @@ await fastify.register(fastifyPrisma, {
 
 #### Setup
 
-##### 1. Update your `tsconfig.json`
+```typescript
+import { PrismaClient } from '../my-prisma-client';
+import fastifyPrisma from '@joggr/fastify-prisma';
 
-You need to update your `tsconfig.json` to map the `compilerOptions.path` to match the output of the generated `PrismaClient`, by
-proxying the `@prisma/client` "package" to the output you defined in your `prisma.schema`.
-
-```javascript
-{
-  "compilerOptions": {
-    ...
-    "paths": {
-      // For types to work this must match `@prisma/client`
-      "@prisma/client": ["./prisma/client"]
-    }
+// Add this so you get types across the board
+declare module 'fastify' {
+  interface FastifyInstance {
+    prisma: PrismaClient;
   }
 }
-```
-
-##### 2. Pass in the client instance
-
-```typescript
-import { PrismaClient } from '@prisma/client';
-import fastifyPrisma from '@joggr/fastify-prisma';
 
 await fastify.register(fastifyPrisma, {
   client: new PrismaClient(),
 });
 ```
+
 ### Accessing the `prisma` client
 
 ```typescript
@@ -103,7 +92,7 @@ async function somePlugin (server, opts) {
 ```
 
 > [!TIP]
-> You can see a working example of this in the [examples/ts-custom-output-esm](./examples/ts-custom-output-esm) directory.
+> You can see a working example of this in the [examples](./examples) directory.
 
 ## Version Compatibility
 
