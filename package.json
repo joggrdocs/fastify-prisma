@@ -31,7 +31,7 @@
     "analyze:ci": "biome ci --diagnostic-level=error",
     "analyze:types": "tsc --noEmit",
     "fix": "biome check --fix",
-    "test": "vitest"
+    "test": "prisma generate --schema ./tests/ && vitest"
   },
   "repository": {
     "type": "git",
