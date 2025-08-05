@@ -70,5 +70,5 @@
   "peerDependencies": {
     "fastify": "5.x"
   },
-  "packageManager": "yarn@4.5.0"
+  "packageManager": "yarn@4.9.2"
 }
