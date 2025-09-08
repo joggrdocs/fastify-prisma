@@ -1348,6 +1348,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"cjs-module-lexer@npm:^2.1.0":
+  version: 2.1.0
+  resolution: "cjs-module-lexer@npm:2.1.0"
+  checksum: 10/97cf8e7ddbf685ce0fe1a89349f42a015e89ddf02f1f0d764ddb8a07bd642d58a036c21b5cae078cdf6a96b332b95f806948d772adcd2c346ce5a897f5feefb7
+  languageName: node
+  linkType: hard
+
 "color-convert@npm:^2.0.1":
   version: 2.0.1
   resolution: "color-convert@npm:2.0.1"
@@ -2699,8 +2706,8 @@ __metadata:
   linkType: hard
 
 "pkgroll@npm:^2.15.1":
-  version: 2.15.1
-  resolution: "pkgroll@npm:2.15.1"
+  version: 2.15.4
+  resolution: "pkgroll@npm:2.15.4"
   dependencies:
     "@rollup/plugin-alias": "npm:^5.1.1"
     "@rollup/plugin-commonjs": "npm:^28.0.6"
@@ -2709,6 +2716,7 @@ __metadata:
     "@rollup/plugin-json": "npm:^6.1.0"
     "@rollup/plugin-node-resolve": "npm:^16.0.1"
     "@rollup/pluginutils": "npm:^5.2.0"
+    cjs-module-lexer: "npm:^2.1.0"
     esbuild: "npm:^0.25.8"
     magic-string: "npm:^0.30.17"
     rollup: "npm:^4.46.2"
@@ -2720,7 +2728,7 @@ __metadata:
       optional: true
   bin:
     pkgroll: dist/cli.mjs
-  checksum: 10/f21bcfc33fff178c32f89b1221055ab7a5c79bb321d455bd3ee5402a2c303292c9dc7aacf8c0d97d1012f674e8751f2a6173d6d7d7104a72b7522c7709a463cc
+  checksum: 10/2589c743974eccda9ff8f72fb0403d758e79110937f840d3dd2fb0dd463b99f8504da1aa36adbfdbec981c8b7be37a2b922dd91bceb087b9b7fc08bd0aace344
   languageName: node
   linkType: hard
 
