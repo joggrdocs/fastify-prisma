@@ -1818,15 +1818,15 @@ __metadata:
   linkType: hard
 
 "fastify-plugin@npm:^5.0.1":
-  version: 5.0.1
-  resolution: "fastify-plugin@npm:5.0.1"
-  checksum: 10/76f6960558239d1ead520ecfb9dbb9b0435a63376d9d48bed0861609a909bf1958cb097745bb1a5485592f2c6d1438941e7481203c86b0e74d2bc34f09e8ed3e
+  version: 5.1.0
+  resolution: "fastify-plugin@npm:5.1.0"
+  checksum: 10/4532fa1f980f1e76f0e0bf1514945fdd9eb1379108235be3db78e07e76761bdc4218c4cc978d382de77aa298c9b49b1723e60c4628e052402d1134af01aa384c
   languageName: node
   linkType: hard
 
 "fastify@npm:^5.4.0":
-  version: 5.4.0
-  resolution: "fastify@npm:5.4.0"
+  version: 5.6.1
+  resolution: "fastify@npm:5.6.1"
   dependencies:
     "@fastify/ajv-compiler": "npm:^4.0.0"
     "@fastify/error": "npm:^4.0.0"
@@ -1843,7 +1843,7 @@ __metadata:
     secure-json-parse: "npm:^4.0.0"
     semver: "npm:^7.6.0"
     toad-cache: "npm:^3.7.0"
-  checksum: 10/bc474e9b3ab05ed54e3d31d124f262d1e64afe758496ea9a8f0ad2b4555c0922887c41e3e7f96a7d203a5ef90040f682b5227917f70aecf60d72a70a942709cd
+  checksum: 10/f58cb066421126c33ad756353984f8e67456d0118bcd75d2e53eec011416b4152450e3b3bfbbd9463e4e2f7ab24c71ec573e2e9d33cd168243bb466fd067cdf3
   languageName: node
   linkType: hard
 
