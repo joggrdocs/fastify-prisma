@@ -96,8 +96,9 @@ The table below shows the compatibility matrix.
 
 | `@joggrdocs/fastify-prisma` | `fastify` | `@prisma/client`  | status       |
 | ---------------------------- | --------- | ---------------- | ------------ |
+| `7.x`                        | `5.x`     | `7.x`            | `active`     |
 | `6.x`                        | `5.x`     | `6.x`            | `active`     |
-| `5.x`                        | `5.x`     | `6.x`            | `active`     |
+| `5.x`                        | `5.x`     | `6.x`            | `deprecated` |
 | `4.x`                        | `5.x`     | `5.x`            | `deprecated` |
 | `1.x` - `3.x`                | `4.x`     | `4.x \|\| 5.x`   | `deprecated` |
 
