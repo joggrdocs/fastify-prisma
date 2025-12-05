@@ -26,7 +26,7 @@
     "clean": "yarn clean:dist && yarn clean:cache",
     "clean:cache": "rimraf --glob \"**/node_modules\"",
     "clean:dist": "rimraf --glob \"./dist\"",
-    "prisma:generate": "prisma generate --schema ./tests/",
+    "prisma:generate": "prisma generate --schema ./tests/prisma/schema.prisma",
     "analyze:fmt": "biome check",
     "analyze:ci": "biome ci --diagnostic-level=error",
     "analyze:types": "tsc --noEmit",
@@ -50,22 +50,22 @@
   },
   "homepage": "https://github.com/joggrdocs/fastify-prisma#readme",
   "devDependencies": {
-    "@biomejs/biome": "^2.1.3",
-    "@prisma/client": "^6.13.0",
-    "@tsconfig/recommended": "^1.0.10",
-    "fastify": "^5.4.0",
+    "@biomejs/biome": "^2.3.8",
+    "@prisma/client": "6.13.0",
+    "@tsconfig/recommended": "^1.0.13",
+    "fastify": "^5.6.2",
     "husky": "^9.1.7",
-    "pkgroll": "^2.15.1",
-    "prisma": "^6.13.0",
-    "rimraf": "^6.0.1",
-    "type-fest": "^4.41.0",
-    "typescript": "^5.9.2",
+    "pkgroll": "^2.21.4",
+    "prisma": "6.13.0",
+    "rimraf": "^6.1.2",
+    "type-fest": "^5.3.0",
+    "typescript": "^5.9.3",
     "vite-tsconfig-paths": "^5.1.4",
     "vitest": "^3.2.4"
   },
   "dependencies": {
     "@prisma/client": "6.13.0",
-    "fastify-plugin": "^5.0.1"
+    "fastify-plugin": "^5.1.0"
   },
   "peerDependencies": {
     "fastify": "5.x"
