@@ -1,4 +1,6 @@
 name: 'ci: PR Format'
+permissions:
+  contents: read
 
 on:
   pull_request:
