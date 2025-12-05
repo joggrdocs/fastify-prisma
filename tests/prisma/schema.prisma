@@ -5,6 +5,7 @@ generator client {
 
 datasource db {
   provider = "sqlite"
+  url      = "file:./faux.db"
 }
 
 model RubberDucky {
