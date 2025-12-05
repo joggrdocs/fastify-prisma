@@ -1,11 +1,10 @@
 generator client {
-  provider = "prisma-client-js"
+  provider = "prisma-client"
   output   = "./client"
 }
 
 datasource db {
   provider = "sqlite"
-  url      = "file:./faux.db"
 }
 
 model RubberDucky {

@@ -1,14 +1,18 @@
+import { PrismaBetterSqlite3 } from '@prisma/adapter-better-sqlite3';
 import Fastify from 'fastify';
 import { afterEach, beforeEach, describe, expect, it } from 'vitest';
 import prismaPlugin from '../src/index';
-import { PrismaClient } from './prisma/client';
+import { PrismaClient } from './prisma/client/client';
 
 describe('plugin', () => {
   // biome-ignore lint/suspicious/noExplicitAny: Only for testing purposes
   let fastify: any;
   let client: PrismaClient;
   beforeEach(() => {
-    client = new PrismaClient();
+    const adapter = new PrismaBetterSqlite3({
+      url: 'file:./tests/prisma/faux.db',
+    });
+    client = new PrismaClient({ adapter });
     fastify = Fastify();
     fastify.register(prismaPlugin, { client });
     return fastify.ready();
