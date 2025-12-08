@@ -625,7 +625,7 @@ __metadata:
     "@prisma/client": "npm:7.0.0"
     "@tsconfig/recommended": "npm:^1.0.13"
     "@types/better-sqlite3": "npm:^7.6.13"
-    better-sqlite3: "npm:^11.0.0"
+    better-sqlite3: "npm:^12.5.0"
     fastify: "npm:^5.6.2"
     fastify-plugin: "npm:^5.1.0"
     husky: "npm:^9.1.7"
@@ -1455,7 +1455,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"better-sqlite3@npm:^11.0.0, better-sqlite3@npm:^11.10.0":
+"better-sqlite3@npm:^11.10.0":
   version: 11.10.0
   resolution: "better-sqlite3@npm:11.10.0"
   dependencies:
@@ -1463,6 +1463,17 @@ __metadata:
     node-gyp: "npm:latest"
     prebuild-install: "npm:^7.1.1"
   checksum: 10/5e4c7437c4fe6033335a79c82974d7ab29f33c51c36f48b73e87e087d21578468575de1c56a7badd4f76f17255e25abefddaeacf018e5eeb9e0cb8d6e3e4a5e1
+  languageName: node
+  linkType: hard
+
+"better-sqlite3@npm:^12.5.0":
+  version: 12.5.0
+  resolution: "better-sqlite3@npm:12.5.0"
+  dependencies:
+    bindings: "npm:^1.5.0"
+    node-gyp: "npm:latest"
+    prebuild-install: "npm:^7.1.1"
+  checksum: 10/8d81cde54231430d5b7fca8d7224ccdd13708ea769765e7a284af1744376568553016ed500f55e7ff992c57f12e29044da17a950adda2a4d361a5295c237d2ea
   languageName: node
   linkType: hard
 
