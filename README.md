@@ -1,7 +1,7 @@
 # fastify-prisma
 
 [![npm version](https://img.shields.io/npm/v/%40joggr/fastify-prisma)](https://www.npmjs.com/package/@joggr/fastify-prisma)
-![CI](https://github.com/joggrdocs/fastify-prisma/workflows/CI/badge.svg)
+[![ci: Code Standards & Testing](https://github.com/joggrdocs/fastify-prisma/actions/workflows/ci.yaml/badge.svg)](https://github.com/joggrdocs/fastify-prisma/actions/workflows/ci.yaml)
 [![Formatted with Biome](https://img.shields.io/badge/Formatted_with-Biome-60a5fa?style=flat&logo=biome)](https://biomejs.dev/)
 
 Fastify Prisma plugin to share the same `PrismaClient` across your entire server.
