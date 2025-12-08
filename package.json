@@ -52,7 +52,7 @@
   "devDependencies": {
     "@biomejs/biome": "^2.3.8",
     "@prisma/adapter-better-sqlite3": "7.0.0",
-    "@prisma/client": "7.0.0",
+    "@prisma/client": "7.1.0",
     "@tsconfig/recommended": "^1.0.13",
     "@types/better-sqlite3": "^7.6.13",
     "better-sqlite3": "^12.5.0",
@@ -67,7 +67,7 @@
     "vitest": "^4.0.15"
   },
   "dependencies": {
-    "@prisma/client": "6.13.0",
+    "@prisma/client": "7.1.0",
     "fastify-plugin": "^5.1.0"
   },
   "peerDependencies": {
