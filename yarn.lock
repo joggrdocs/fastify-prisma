@@ -621,7 +621,7 @@ __metadata:
   resolution: "@joggr/fastify-prisma@workspace:."
   dependencies:
     "@biomejs/biome": "npm:^2.3.8"
-    "@prisma/adapter-better-sqlite3": "npm:7.0.0"
+    "@prisma/adapter-better-sqlite3": "npm:7.2.0"
     "@prisma/client": "npm:7.1.0"
     "@tsconfig/recommended": "npm:^1.0.13"
     "@types/better-sqlite3": "npm:^7.6.13"
@@ -728,13 +728,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@prisma/adapter-better-sqlite3@npm:7.0.0":
-  version: 7.0.0
-  resolution: "@prisma/adapter-better-sqlite3@npm:7.0.0"
+"@prisma/adapter-better-sqlite3@npm:7.2.0":
+  version: 7.2.0
+  resolution: "@prisma/adapter-better-sqlite3@npm:7.2.0"
   dependencies:
-    "@prisma/driver-adapter-utils": "npm:7.0.0"
-    better-sqlite3: "npm:^11.10.0"
-  checksum: 10/c7edae6c34e71ba93b4428f210664adaffdbcf44a2ddc54888c3f5862d0422eb3e7097e949581d38bebcaf63b9b54a32e176ba4d4ca0750a588936382dad1079
+    "@prisma/driver-adapter-utils": "npm:7.2.0"
+    better-sqlite3: "npm:^12.4.5"
+  checksum: 10/9bf034e4b2d88b2ee30fd0d5f1d6edcc98c40ef5d5a357596226f09ec6d2cc46c8a4366c259d4f90ca3b822bfc6517ebee3258dcc9c1304078cca599ca7f2789
   languageName: node
   linkType: hard
 
@@ -788,6 +788,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@prisma/debug@npm:7.2.0":
+  version: 7.2.0
+  resolution: "@prisma/debug@npm:7.2.0"
+  checksum: 10/1051e524922e3a5df58326b0826a6e6cb1c1945b36355621bf7f489f4fa8577ea027ac2faa4a1c8e6666d4d6d726b882c3f5e8ff28d72952bb468144a9dc37d0
+  languageName: node
+  linkType: hard
+
 "@prisma/dev@npm:0.13.0":
   version: 0.13.0
   resolution: "@prisma/dev@npm:0.13.0"
@@ -813,12 +820,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@prisma/driver-adapter-utils@npm:7.0.0":
-  version: 7.0.0
-  resolution: "@prisma/driver-adapter-utils@npm:7.0.0"
+"@prisma/driver-adapter-utils@npm:7.2.0":
+  version: 7.2.0
+  resolution: "@prisma/driver-adapter-utils@npm:7.2.0"
   dependencies:
-    "@prisma/debug": "npm:7.0.0"
-  checksum: 10/9e399ed59a2c7dcac517f1ca1ebbeae8bd5eeab8ac4267f723bca5baf51cee3b3cb37c135fb81c2807b50d6c8a3e14450a6f488fb4de6fcd92910d9f7c306cfe
+    "@prisma/debug": "npm:7.2.0"
+  checksum: 10/061cd1d8c799ea6e5d90772a28e62befd3f20b9ea8c2ca40f60d4ce684f0556c4284da932365d5f44d00b3ae0f5f286443026e038f4e6a330d439cb78c27b22d
   languageName: node
   linkType: hard
 
@@ -1445,18 +1452,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"better-sqlite3@npm:^11.10.0":
-  version: 11.10.0
-  resolution: "better-sqlite3@npm:11.10.0"
-  dependencies:
-    bindings: "npm:^1.5.0"
-    node-gyp: "npm:latest"
-    prebuild-install: "npm:^7.1.1"
-  checksum: 10/5e4c7437c4fe6033335a79c82974d7ab29f33c51c36f48b73e87e087d21578468575de1c56a7badd4f76f17255e25abefddaeacf018e5eeb9e0cb8d6e3e4a5e1
-  languageName: node
-  linkType: hard
-
-"better-sqlite3@npm:^12.5.0":
+"better-sqlite3@npm:^12.4.5, better-sqlite3@npm:^12.5.0":
   version: 12.5.0
   resolution: "better-sqlite3@npm:12.5.0"
   dependencies:
